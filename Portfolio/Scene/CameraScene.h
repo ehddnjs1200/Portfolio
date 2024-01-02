@@ -1,0 +1,36 @@
+#pragma once
+class CameraScene : public Scene
+{
+public:
+	CameraScene();
+	virtual ~CameraScene();
+
+	// Scene을(를) 통해 상속됨
+	virtual void Update() override;
+	virtual void Render() override;
+	virtual void PostRender() override;
+
+	void Init();
+	void Setting();
+
+	void ShuffleDeck();
+
+	bool AllDead(shared_ptr<Character> player)
+	{
+		if (player->GetHp() == 0)
+			return false;
+		return true;
+	}
+
+	void Drow();
+	void UsingCard(shared_ptr<Character> enemy, shared_ptr<Card> card);
+
+private:
+	shared_ptr<Ironclad> _ironclad;
+	shared_ptr<GremlinNob> _gremlinNob;
+	shared_ptr<AllCard> _allCard;
+	vector<shared_ptr<Card>> _deck;
+	vector<shared_ptr<Card>> _hand;
+	vector<shared_ptr<Card>> _discarded;
+};
+

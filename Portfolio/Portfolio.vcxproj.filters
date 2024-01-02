@@ -1,0 +1,653 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Portfolio.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Device\Device.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeDefine.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Render\Buffer\VertexBuffer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Render\VertexLayout.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Render\Shader\VertexShader.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Render\Shader\PixelShader.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Render\Texture\SRV.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\State\SamplerState.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Render\Buffer\IndexBuffer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Program\Program.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Render\Buffer\ConstantBuffer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Render\Buffer\GlobarBuffer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Utillity\KeyBoard.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Utillity\Timer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\State\BlendState.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\State\StateManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Render\Texture\TextureManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Math\Transform.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Obejct\BagicObject\Quad.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Math\Vector2.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Collider\RectCollider.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Collider\Collider.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\ColliderScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Collider\CircleCollider.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Obejct\BagicObject\Sprite.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Action\Action.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\FilterScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\CameraScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Camera\Camera.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Obejct\BagicObject\EffectManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Obejct\BagicObject\Effect.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Utillity\Utillity.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Obejct\Ironclad\Ironclad.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Obejct\Card\Card.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Obejct\HealthBar\HealthBar.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Obejct\Card\AllCard.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Obejct\Monster\GremlinNob.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Obejct\Character\Character.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Portfolio.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Device\Device.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Render\Buffer\VertexBuffer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Render\Shader\VertexShader.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="framework.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Render\Shader\PixelShader.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Render\Texture\SRV.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\State\SamplerState.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Render\Buffer\IndexBuffer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Program\Program.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Render\Buffer\ConstantBuffer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Utillity\KeyBoard.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Utillity\Timer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\State\BlendState.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\State\StateManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Render\Texture\TextureManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Math\Transform.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Obejct\BagicObject\Quad.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Math\Vector2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Collider\RectCollider.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Collider\Collider.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\ColliderScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Collider\CircleCollider.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Obejct\BagicObject\Sprite.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Action\Action.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\FilterScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\CameraScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Camera\Camera.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Obejct\BagicObject\EffectManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Obejct\BagicObject\Effect.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Utillity\Utillity.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Obejct\Ironclad\Ironclad.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Obejct\Card\Card.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Obejct\HealthBar\HealthBar.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Obejct\Card\AllCard.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Obejct\Monster\GremlinNob.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Obejct\Character\Character.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Portfolio.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Portfolio.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\background.jpg">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Effect\explosion.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Effect\fire_8x2.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Effect\GreenExplosion.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Effect\hit_4x2.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Effect\hit2_4x4.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Effect\skill_6x2.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Effect\skill_core_4x4.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Effect\smoke_4x4.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Effect\thunder_core_4x4.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Effect\BlueExplosion.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\BlueExplosion.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Ironclad.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Anger.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Bash.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Blood for Blood.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Bludgeon.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Body Slam.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Carnage.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Clash.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Clothesline.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Cleave.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Dropkick.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Feed.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Fiend Fire.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Headbutt.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Heavy Blade.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Hemokinesis.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Immolate.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Iron Wave.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Perfected Strike.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Pommel Strike.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Rampage.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Pummel.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Reckless Charge.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Reaper.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Searing Blow.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Sever Soul.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Strike.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Sword Boomerang.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Thunderclap.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Twin Strike.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Uppercut.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Whirlwind.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\Wild Strike.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Power\Barricade.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Power\Berserk.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Power\Combust.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Power\Brutality.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Power\Corruption.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Power\Dark Embrace.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Power\Demon Form.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Power\Evolve.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Power\Fire Breathing.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Power\Feel No Pain.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Power\Inflame.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Power\Juggernaut.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Power\Metallicize.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Power\Rupture.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Armaments.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Battle Trance.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Bloodletting.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Burning Pact.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Disarm.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Defend.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Double Tap.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Dual Wield.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Entrench.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Exhume.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Flame Barrier.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Flex.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Ghostly Armor.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Havoc.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Impervious.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Infernal Blade.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Intimidate.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Limit Break.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Offering.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Power Through.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Rage.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Second Wind.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Seeing Red.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Sentinel.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Shockwave.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Shrug It Off.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Spot Weakness.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\True Grit.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Skill\Warcry.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\0.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\1.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\2.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\3.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\4.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\5.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\6.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\7.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\9.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\8.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\10.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\11.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\12.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\13.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\14.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\15.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\16.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\17.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\18.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\19.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\20.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\21.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\22.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\23.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\24.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\25.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\26.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\27.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\28.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\29.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\30.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\Attack\31.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Monster\Gremlin Nob.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shaders\TutorialShader.hlsl" />
+    <FxCompile Include="Shaders\WVPVertexShader.hlsl" />
+    <FxCompile Include="Shaders\WVPPixelShader.hlsl" />
+    <FxCompile Include="Shaders\Collider\ColliderVertexShader.hlsl" />
+    <FxCompile Include="Shaders\Collider\ColliderPixelShader.hlsl" />
+    <FxCompile Include="Shaders\Sprite\SpriteVS.hlsl" />
+    <FxCompile Include="Shaders\Sprite\SpritePS.hlsl" />
+    <FxCompile Include="Shaders\FIlterPS.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgui.ini" />
+  </ItemGroup>
+</Project>

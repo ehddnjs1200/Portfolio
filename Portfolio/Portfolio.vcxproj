@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{1AB75046-C2DF-4263-9F55-D71FA694FBEC}</ProjectGuid>
+    <RootNamespace>Dx11HJ</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>framework.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>framework.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>framework.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Users\정동원\OneDrive\바탕 화면\Dx11_HJ (1)\Portfolio\DirectXTK-main\Inc</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\정동원\OneDrive\바탕 화면\Dx11_HJ (1)\Portfolio\DirectXTK-main\Bin\Desktop_2019_Win10\x64\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);DirectXTK.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>framework.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Users\정동원\OneDrive\바탕 화면\Dx11_HJ (1)\Portfolio\DirectXTK-main\Inc</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\정동원\OneDrive\바탕 화면\Dx11_HJ (1)\Portfolio\DirectXTK-main\Bin\Desktop_2019_Win10\x64\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);DirectXTK.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Obejct\Character\Character.h" />
+    <ClInclude Include="Obejct\Monster\GremlinNob.h" />
+    <ClInclude Include="Obejct\Card\AllCard.h" />
+    <ClInclude Include="Obejct\HealthBar\HealthBar.h" />
+    <ClInclude Include="Obejct\Card\Card.h" />
+    <ClInclude Include="Obejct\Ironclad\Ironclad.h" />
+    <ClInclude Include="Obejct\BagicObject\Effect.h" />
+    <ClInclude Include="Obejct\BagicObject\EffectManager.h" />
+    <ClInclude Include="Framwork\Camera\Camera.h" />
+    <ClInclude Include="Scene\CameraScene.h" />
+    <ClInclude Include="Scene\FilterScene.h" />
+    <ClInclude Include="Framwork\Action\Action.h" />
+    <ClInclude Include="Framwork\Collider\CircleCollider.h" />
+    <ClInclude Include="Scene\ColliderScene.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Framwork\Collider\Collider.h" />
+    <ClInclude Include="Framwork\Collider\RectCollider.h" />
+    <ClInclude Include="Framwork\State\BlendState.h" />
+    <ClInclude Include="Framwork\Render\Buffer\ConstantBuffer.h" />
+    <ClInclude Include="Framwork\Device\Device.h" />
+    <ClInclude Include="Portfolio.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="Framwork\Render\Buffer\GlobarBuffer.h" />
+    <ClInclude Include="Framwork\Render\VertexLayout.h" />
+    <ClInclude Include="Framwork\Render\Shader\PixelShader.h" />
+    <ClInclude Include="Framwork\Render\Buffer\IndexBuffer.h" />
+    <ClInclude Include="Framwork\Utillity\KeyBoard.h" />
+    <ClInclude Include="Obejct\BagicObject\Quad.h" />
+    <ClInclude Include="Program\Program.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Framwork\Render\Texture\SRV.h" />
+    <ClInclude Include="Framwork\State\SamplerState.h" />
+    <ClInclude Include="Scene\Scene.h" />
+    <ClInclude Include="Framwork\State\StateManager.h" />
+    <ClInclude Include="Obejct\BagicObject\Sprite.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Framwork\Utillity\Timer.h" />
+    <ClInclude Include="Framwork\Render\Texture\TextureManager.h" />
+    <ClInclude Include="Framwork\Math\Transform.h" />
+    <ClInclude Include="TypeDefine.h" />
+    <ClInclude Include="Framwork\Render\Buffer\VertexBuffer.h" />
+    <ClInclude Include="Framwork\Render\Shader\VertexShader.h" />
+    <ClInclude Include="Framwork\Math\Vector2.h" />
+    <ClInclude Include="Framwork\Utillity\Utillity.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Obejct\Character\Character.cpp" />
+    <ClCompile Include="Obejct\Monster\GremlinNob.cpp" />
+    <ClCompile Include="Obejct\Card\AllCard.cpp" />
+    <ClCompile Include="Obejct\HealthBar\HealthBar.cpp" />
+    <ClCompile Include="Obejct\Card\Card.cpp" />
+    <ClCompile Include="Obejct\Ironclad\Ironclad.cpp" />
+    <ClCompile Include="Obejct\BagicObject\Effect.cpp" />
+    <ClCompile Include="Obejct\BagicObject\EffectManager.cpp" />
+    <ClCompile Include="Framwork\Camera\Camera.cpp" />
+    <ClCompile Include="Scene\CameraScene.cpp" />
+    <ClCompile Include="Scene\FilterScene.cpp" />
+    <ClCompile Include="Framwork\Action\Action.cpp" />
+    <ClCompile Include="Framwork\Collider\CircleCollider.cpp" />
+    <ClCompile Include="Scene\ColliderScene.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Framwork\Collider\Collider.cpp" />
+    <ClCompile Include="Framwork\Collider\RectCollider.cpp" />
+    <ClCompile Include="Framwork\State\BlendState.cpp" />
+    <ClCompile Include="Framwork\Render\Buffer\ConstantBuffer.cpp" />
+    <ClCompile Include="Framwork\Device\Device.cpp" />
+    <ClCompile Include="Portfolio.cpp" />
+    <ClCompile Include="Framwork\Render\Buffer\VertexBuffer.cpp" />
+    <ClCompile Include="Framwork\Render\Shader\VertexShader.cpp" />
+    <ClCompile Include="framework.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Framwork\Render\Shader\PixelShader.cpp" />
+    <ClCompile Include="Framwork\Render\Texture\SRV.cpp" />
+    <ClCompile Include="Framwork\State\SamplerState.cpp" />
+    <ClCompile Include="Framwork\Render\Buffer\IndexBuffer.cpp" />
+    <ClCompile Include="Framwork\Utillity\KeyBoard.cpp" />
+    <ClCompile Include="Obejct\BagicObject\Quad.cpp" />
+    <ClCompile Include="Program\Program.cpp" />
+    <ClCompile Include="Scene\Scene.cpp" />
+    <ClCompile Include="Framwork\Utillity\Timer.cpp" />
+    <ClCompile Include="Framwork\State\StateManager.cpp" />
+    <ClCompile Include="Framwork\Render\Texture\TextureManager.cpp" />
+    <ClCompile Include="Framwork\Math\Transform.cpp" />
+    <ClCompile Include="Framwork\Math\Vector2.cpp" />
+    <ClCompile Include="Obejct\BagicObject\Sprite.cpp" />
+    <ClCompile Include="Framwork\Utillity\Utillity.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Portfolio.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Portfolio.ico" />
+    <Image Include="Resource\background.jpg" />
+    <Image Include="Resource\BlueExplosion.png" />
+    <Image Include="Resource\Effect\BlueExplosion.png" />
+    <Image Include="Resource\Effect\explosion.png" />
+    <Image Include="Resource\Effect\fire_8x2.png" />
+    <Image Include="Resource\Effect\GreenExplosion.png" />
+    <Image Include="Resource\Effect\hit2_4x4.png" />
+    <Image Include="Resource\Effect\hit_4x2.png" />
+    <Image Include="Resource\Effect\skill_6x2.png" />
+    <Image Include="Resource\Effect\skill_core_4x4.png" />
+    <Image Include="Resource\Effect\smoke_4x4.png" />
+    <Image Include="Resource\Effect\thunder_core_4x4.png" />
+    <Image Include="Resource\Ironclad\Attack\0.png" />
+    <Image Include="Resource\Ironclad\Attack\1.png" />
+    <Image Include="Resource\Ironclad\Attack\10.png" />
+    <Image Include="Resource\Ironclad\Attack\11.png" />
+    <Image Include="Resource\Ironclad\Attack\12.png" />
+    <Image Include="Resource\Ironclad\Attack\13.png" />
+    <Image Include="Resource\Ironclad\Attack\14.png" />
+    <Image Include="Resource\Ironclad\Attack\15.png" />
+    <Image Include="Resource\Ironclad\Attack\16.png" />
+    <Image Include="Resource\Ironclad\Attack\17.png" />
+    <Image Include="Resource\Ironclad\Attack\18.png" />
+    <Image Include="Resource\Ironclad\Attack\19.png" />
+    <Image Include="Resource\Ironclad\Attack\2.png" />
+    <Image Include="Resource\Ironclad\Attack\20.png" />
+    <Image Include="Resource\Ironclad\Attack\21.png" />
+    <Image Include="Resource\Ironclad\Attack\22.png" />
+    <Image Include="Resource\Ironclad\Attack\23.png" />
+    <Image Include="Resource\Ironclad\Attack\24.png" />
+    <Image Include="Resource\Ironclad\Attack\25.png" />
+    <Image Include="Resource\Ironclad\Attack\26.png" />
+    <Image Include="Resource\Ironclad\Attack\27.png" />
+    <Image Include="Resource\Ironclad\Attack\28.png" />
+    <Image Include="Resource\Ironclad\Attack\29.png" />
+    <Image Include="Resource\Ironclad\Attack\3.png" />
+    <Image Include="Resource\Ironclad\Attack\30.png" />
+    <Image Include="Resource\Ironclad\Attack\31.png" />
+    <Image Include="Resource\Ironclad\Attack\4.png" />
+    <Image Include="Resource\Ironclad\Attack\5.png" />
+    <Image Include="Resource\Ironclad\Attack\6.png" />
+    <Image Include="Resource\Ironclad\Attack\7.png" />
+    <Image Include="Resource\Ironclad\Attack\8.png" />
+    <Image Include="Resource\Ironclad\Attack\9.png" />
+    <Image Include="Resource\Ironclad\Attack\Anger.png" />
+    <Image Include="Resource\Ironclad\Attack\Bash.png" />
+    <Image Include="Resource\Ironclad\Attack\Blood for Blood.png" />
+    <Image Include="Resource\Ironclad\Attack\Bludgeon.png" />
+    <Image Include="Resource\Ironclad\Attack\Body Slam.png" />
+    <Image Include="Resource\Ironclad\Attack\Carnage.png" />
+    <Image Include="Resource\Ironclad\Attack\Clash.png" />
+    <Image Include="Resource\Ironclad\Attack\Cleave.png" />
+    <Image Include="Resource\Ironclad\Attack\Clothesline.png" />
+    <Image Include="Resource\Ironclad\Attack\Dropkick.png" />
+    <Image Include="Resource\Ironclad\Attack\Feed.png" />
+    <Image Include="Resource\Ironclad\Attack\Fiend Fire.png" />
+    <Image Include="Resource\Ironclad\Attack\Headbutt.png" />
+    <Image Include="Resource\Ironclad\Attack\Heavy Blade.png" />
+    <Image Include="Resource\Ironclad\Attack\Hemokinesis.png" />
+    <Image Include="Resource\Ironclad\Attack\Immolate.png" />
+    <Image Include="Resource\Ironclad\Attack\Iron Wave.png" />
+    <Image Include="Resource\Ironclad\Attack\Perfected Strike.png" />
+    <Image Include="Resource\Ironclad\Attack\Pommel Strike.png" />
+    <Image Include="Resource\Ironclad\Attack\Pummel.png" />
+    <Image Include="Resource\Ironclad\Attack\Rampage.png" />
+    <Image Include="Resource\Ironclad\Attack\Reaper.png" />
+    <Image Include="Resource\Ironclad\Attack\Reckless Charge.png" />
+    <Image Include="Resource\Ironclad\Attack\Searing Blow.png" />
+    <Image Include="Resource\Ironclad\Attack\Sever Soul.png" />
+    <Image Include="Resource\Ironclad\Attack\Strike.png" />
+    <Image Include="Resource\Ironclad\Attack\Sword Boomerang.png" />
+    <Image Include="Resource\Ironclad\Attack\Thunderclap.png" />
+    <Image Include="Resource\Ironclad\Attack\Twin Strike.png" />
+    <Image Include="Resource\Ironclad\Attack\Uppercut.png" />
+    <Image Include="Resource\Ironclad\Attack\Whirlwind.png" />
+    <Image Include="Resource\Ironclad\Attack\Wild Strike.png" />
+    <Image Include="Resource\Ironclad\Ironclad.png" />
+    <Image Include="Resource\Ironclad\Power\Barricade.png" />
+    <Image Include="Resource\Ironclad\Power\Berserk.png" />
+    <Image Include="Resource\Ironclad\Power\Brutality.png" />
+    <Image Include="Resource\Ironclad\Power\Combust.png" />
+    <Image Include="Resource\Ironclad\Power\Corruption.png" />
+    <Image Include="Resource\Ironclad\Power\Dark Embrace.png" />
+    <Image Include="Resource\Ironclad\Power\Demon Form.png" />
+    <Image Include="Resource\Ironclad\Power\Evolve.png" />
+    <Image Include="Resource\Ironclad\Power\Feel No Pain.png" />
+    <Image Include="Resource\Ironclad\Power\Fire Breathing.png" />
+    <Image Include="Resource\Ironclad\Power\Inflame.png" />
+    <Image Include="Resource\Ironclad\Power\Juggernaut.png" />
+    <Image Include="Resource\Ironclad\Power\Metallicize.png" />
+    <Image Include="Resource\Ironclad\Power\Rupture.png" />
+    <Image Include="Resource\Ironclad\Skill\Armaments.png" />
+    <Image Include="Resource\Ironclad\Skill\Battle Trance.png" />
+    <Image Include="Resource\Ironclad\Skill\Bloodletting.png" />
+    <Image Include="Resource\Ironclad\Skill\Burning Pact.png" />
+    <Image Include="Resource\Ironclad\Skill\Defend.png" />
+    <Image Include="Resource\Ironclad\Skill\Disarm.png" />
+    <Image Include="Resource\Ironclad\Skill\Double Tap.png" />
+    <Image Include="Resource\Ironclad\Skill\Dual Wield.png" />
+    <Image Include="Resource\Ironclad\Skill\Entrench.png" />
+    <Image Include="Resource\Ironclad\Skill\Exhume.png" />
+    <Image Include="Resource\Ironclad\Skill\Flame Barrier.png" />
+    <Image Include="Resource\Ironclad\Skill\Flex.png" />
+    <Image Include="Resource\Ironclad\Skill\Ghostly Armor.png" />
+    <Image Include="Resource\Ironclad\Skill\Havoc.png" />
+    <Image Include="Resource\Ironclad\Skill\Impervious.png" />
+    <Image Include="Resource\Ironclad\Skill\Infernal Blade.png" />
+    <Image Include="Resource\Ironclad\Skill\Intimidate.png" />
+    <Image Include="Resource\Ironclad\Skill\Limit Break.png" />
+    <Image Include="Resource\Ironclad\Skill\Offering.png" />
+    <Image Include="Resource\Ironclad\Skill\Power Through.png" />
+    <Image Include="Resource\Ironclad\Skill\Rage.png" />
+    <Image Include="Resource\Ironclad\Skill\Second Wind.png" />
+    <Image Include="Resource\Ironclad\Skill\Seeing Red.png" />
+    <Image Include="Resource\Ironclad\Skill\Sentinel.png" />
+    <Image Include="Resource\Ironclad\Skill\Shockwave.png" />
+    <Image Include="Resource\Ironclad\Skill\Shrug It Off.png" />
+    <Image Include="Resource\Ironclad\Skill\Spot Weakness.png" />
+    <Image Include="Resource\Ironclad\Skill\True Grit.png" />
+    <Image Include="Resource\Ironclad\Skill\Warcry.png" />
+    <Image Include="Resource\Monster\Gremlin Nob.png" />
+    <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shaders\Collider\ColliderPixelShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Shaders\Collider\ColliderVertexShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Shaders\FIlterPS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Shaders\Sprite\SpritePS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Shaders\Sprite\SpriteVS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Shaders\TutorialShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Effect</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Effect</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Effect</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Effect</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Shaders\WVPPixelShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Shaders\WVPVertexShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DirectXTex\DirectXTex_Desktop_2019_Win10.vcxproj">
+      <Project>{371b9fa9-4c90-4ac6-a123-aced756d6c77}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ImGUI\ImGUI.vcxproj">
+      <Project>{11ed4d55-ef1a-4ab8-b10a-9f61dbe5188d}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgui.ini" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
