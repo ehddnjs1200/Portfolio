@@ -62,7 +62,7 @@ void AllCard::ListFilesInFolder(const wstring& folderPath, vector<FileInfo>& fil
 
 void AllCard::SetIKA()
 {
-	wstring folderPath = L"C:\\Users\\정동원\\OneDrive\\바탕 화면\\Dx11_HJ (1)\\Portfolio\\Portfolio\\Resource\\Ironclad\\Attack";
+	wstring folderPath = L"Resource/Ironclad/Attack";
 	vector<FileInfo> filePaths;
 	AllCard::ListFilesInFolder(folderPath, filePaths);
 	sort(filePaths.begin(), filePaths.end(), CompareFileNumbers);

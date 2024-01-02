@@ -6,7 +6,7 @@ CameraScene::CameraScene()
 	Init();
 	Setting();
 
-	Drow();
+	
 }
 
 CameraScene::~CameraScene()
@@ -19,11 +19,11 @@ void CameraScene::Update()
 	_ironclad->Update();
 	_gremlinNob->Update();
 
-	
+	Drow();
 
-	//_deck[0]->Update();
-	//_deck[1]->Update();
-	//_deck[2]->Update();
+	_deck[0]->Update();
+	_deck[1]->Update();
+	_deck[2]->Update();
 
 	//while (!AllDead(_ironclad) && !AllDead(_gremlinNob))
 	//{
@@ -104,6 +104,8 @@ void CameraScene::Drow()
 	_deck[1]->Draw();
 	_deck[2]->Draw();
 
+	_deck[0]->SetPosition(Vector2(0, CenterY), 0.9f);
+	_deck[1]->SetPosition(Vector2(CenterX, 0), 0.9f);
 	_deck[2]->SetPosition(Vector2(CenterX, CenterY), 0.9f);
 	//_deck[0]->SetPosition();
 
