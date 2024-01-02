@@ -40,9 +40,6 @@
 // DirectXTex 라이브러리
 #include "../DirectXTex/DirectXTex.h"
 
-#include "SimpleMath.h"
-#include "SpriteBatch.h"
-#include "SpriteFont.h"
 // ImGui
 #include "../ImGUI/imgui.h"
 #include "../ImGUI/imgui_impl_dx11.h"

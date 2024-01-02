@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\x64\Debug\Portfolio.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\x64\Debug\ColliderPixelShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\x64\Debug\ColliderVertexShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\x64\Debug\FIlterPS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\x64\Debug\SpritePS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\x64\Debug\SpriteVS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\x64\Debug\TutorialShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\x64\Debug\WVPPixelShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\x64\Debug\WVPVertexShader.cso</FullPath>
+    </ContentFile>
+  </ContentFiles>
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>
