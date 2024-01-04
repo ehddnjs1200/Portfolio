@@ -5,8 +5,6 @@ CameraScene::CameraScene()
 {
 	Init();
 	Setting();
-
-	
 }
 
 CameraScene::~CameraScene()
@@ -57,18 +55,17 @@ void CameraScene::Init()
 {
 	_ironclad = make_shared<Ironclad>();
 	_gremlinNob = make_shared<GremlinNob>();
-    _allCard = make_shared<Card>();
+	
 }
 
 
 
 void CameraScene::Setting()
 {
-
-	_allCard->SetIKA();
+	_allCard = make_shared<Card>()->SetIKA(_allCard);
 
 	for (int i = 0; i < 2; i++) {
-		shared_ptr<Card> cardIKA0 = _allCard->GetCard("IKA0");
+		shared_ptr<Card> cardIKA0 = _allCard["IKA0"];
 		if (cardIKA0) {
 			_deck.emplace_back(make_shared<Card>(*cardIKA0));
 		}
@@ -76,14 +73,9 @@ void CameraScene::Setting()
 			// 예외 처리 또는 로그 기록 등을 추가할 수 있습니다.
 		}
 	}
-	auto ptr0 = _deck[0].get();
-	auto ptr1 = _deck[1].get();
-	//_deck[0]->SetPosition(Vector2(CenterX, CenterY));
-	//_deck[1]->SetPosition(Vector2(CenterX, 0));
-	_deck[0]->IsActive()->SetPos(Vector2(CenterX, 0));
-	_deck[1]->IsActive()->SetPos(Vector2(CenterX, CenterY));
-	//_deck[1]->SetPosition(Vector2(CenterX, 0));
-	//_deck.emplace_back(make_shared<Card>(_allCard->GetAllCard()["IKA1"].get()));
+
+	_deck[0]->IsActive()->SetPos(Vector2(800, 0));
+	_deck[1]->IsActive()->SetPos(Vector2(800, 500));
 
 }
 

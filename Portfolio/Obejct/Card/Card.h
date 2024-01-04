@@ -33,16 +33,7 @@ public:
 
 	void ListFilesInFolder(const wstring& folderPath, vector<FileInfo>& filePaths);
 
-	map<string, shared_ptr<Card>> SetIKA();
-
-	shared_ptr<Card> GetCard(string key) {
-		auto it = _allCard.find(key);
-		if (it != _allCard.end()) {
-			// 해당 키에 대한 복사본을 만들어 반환
-			return std::make_shared<Card>(*it->second);
-		}
-		return nullptr;
-	}
+	map<string, shared_ptr<Card>> SetIKA(map<string, shared_ptr<Card>>_allCard);
 
 	shared_ptr<Transform> IsActive() { return _card->GetTransForm(); }
 
@@ -57,16 +48,17 @@ public:
 	int GetDraws() { return _draws; }
 	int GetmWeaken() { return _mWeaken; }
 	int GetmVulnerable() { return _mVulnerable; }
+
 private:
 
 	shared_ptr<Quad> _card;
-	shared_ptr<RectCollider> _col;
+	shared_ptr<Collider> _col;
 
 	Type _type = Type::Attack;
 	Rarity _rarity = Rarity::Common;
 
 	Vector2 _pos = { 0,0 };
-
+	wstring _file;
 	string _name;
 	int _cost;
 	int _power;
@@ -88,8 +80,5 @@ private:
 	bool _extinction = false;
 
 	bool _isActive = false;
-
-
-	map<string, shared_ptr<Card>>_allCard;
 };
 

@@ -2,17 +2,17 @@
 #include "Card.h"
 
 Card::Card(wstring file, Type type, Rarity rarity, string name, int cost, int power, int shield, int force, int agility, int draws, int weaken, int vulnerable, int maxUpgrade, int upgrade, int mWeaken, int mVulnerable, int injury, int combo, int multi, int loss, bool volatility, bool extinction, bool isActive)
-	:_type(type), _rarity(rarity), _name(name), _cost(cost), _power(power), _shield(shield), _force(force), _agility(agility), _draws(draws), _weaken(weaken), _vulnerable(vulnerable), _maxUpgrade(maxUpgrade), _upgrade(upgrade), _mWeaken(mWeaken), _mVulnerable(mVulnerable), _injury(injury), _combo(combo), _multi(multi), _loss(loss), _volatility(volatility), _extinction(extinction), _isActive(isActive)
+	:_file(file),_type(type), _rarity(rarity), _name(name), _cost(cost), _power(power), _shield(shield), _force(force), _agility(agility), _draws(draws), _weaken(weaken), _vulnerable(vulnerable), _maxUpgrade(maxUpgrade), _upgrade(upgrade), _mWeaken(mWeaken), _mVulnerable(mVulnerable), _injury(injury), _combo(combo), _multi(multi), _loss(loss), _volatility(volatility), _extinction(extinction), _isActive(isActive)
 {
-	_card = make_shared<Quad>(file);
-	_card->GetTransForm()->GetScale() *= 0.5f;
-
-	_col = make_shared<RectCollider>(_card->GetTextureSize());
+	_card = make_shared<Quad>(_file);
+	_card->GetTransForm()->GetScale() *= 0.3f;
+	_card->GetTransForm()->SetPos(_pos);
+	_col = make_shared<RectCollider>(_card->GetTextureSize() * 3.0f);
 	_col->SetParent(_card->GetTransForm());
 }
 
 Card::Card(const Card& other)
-	: _type(other._type), _rarity(other._rarity),
+	: _file(other._file),_type(other._type), _rarity(other._rarity),
 	_name(other._name), _cost(other._cost), _power(other._power),
 	_shield(other._shield), _force(other._force), _agility(other._agility),
 	_draws(other._draws), _weaken(other._weaken), _vulnerable(other._vulnerable),
@@ -20,14 +20,13 @@ Card::Card(const Card& other)
 	_mWeaken(other._mWeaken), _mVulnerable(other._mVulnerable),
 	_injury(other._injury), _combo(other._combo), _multi(other._multi),
 	_loss(other._loss), _volatility(other._volatility),
-	_extinction(other._extinction), _isActive(other._isActive){
-
-	_card = make_shared<Quad>(*other._card);
-	_col = make_shared<RectCollider>(*other._col);
-	// 복사 생성자에서 _allCard를 초기화하면서 새로운 shared_ptr을 생성
-	for (const auto& entry : other._allCard) {
-		_allCard[entry.first] = make_shared<Card>(*entry.second);
-	}
+	_extinction(other._extinction), _isActive(other._isActive)
+{
+	_card = make_shared<Quad>(other._file);
+	_card->GetTransForm()->GetScale() = other._card->GetTransForm()->GetScale();
+	_card->GetTransForm()->SetPos(other._pos);
+	_col = make_shared<RectCollider>(_card->GetTextureSize() * 3.0f);
+	_col->SetParent(_card->GetTransForm());
 }
 
 Card::~Card()
@@ -37,10 +36,8 @@ Card::~Card()
 
 void Card::Update()
 {
-	//_card->GetTransForm()->GetPos() = _pos;
-	_card->GetTransForm()->SetPos(_pos);
-	//_card->Update();
-	//_col->Update();
+	_card->Update();
+	_col->Update();
 }
 
 void Card::Render()
@@ -51,7 +48,8 @@ void Card::Render()
 
 void Card::SetPosition(Vector2 pos)
 {
-	_pos = pos;
+	_card->GetTransForm()->GetPos() = pos;
+	_card->GetTransForm()->GetScale() *= 0.5f;
 }
 
 bool CompareFileNumbers(const Card::FileInfo& a, const Card::FileInfo& b) {
@@ -103,7 +101,7 @@ void Card::ListFilesInFolder(const wstring& folderPath, vector<FileInfo>& filePa
 	FindClose(hFind);
 }
 
-map<string, shared_ptr<Card>> Card::SetIKA()
+map<string, shared_ptr<Card>> Card::SetIKA(map<string, shared_ptr<Card>>_allCard)
 {
 	wstring folderPath = L"Resource/Ironclad/Attack";
 	vector<FileInfo> filePaths;
@@ -115,8 +113,6 @@ map<string, shared_ptr<Card>> Card::SetIKA()
 	for (const auto& fileInfo : filePaths) {
 		file.emplace_back(L"Ironclad/Attack/" + fileInfo.filePath);
 	}
-	shared_ptr<Card> newCard = make_shared<Card>(file[0], Card::Attack, Card::Common, "Strike", 1, 6, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0);
-	_allCard["IKA0"] = newCard;
 
 
 	//int cost, int power, int shield, int force, int agility,int draws, int weaken, int vulnerable, int maxUpgrade, int upgrade, int mWeaken, int mVulnerable, int injury, bool extinction = false

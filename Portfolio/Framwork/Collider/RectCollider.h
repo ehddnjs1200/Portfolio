@@ -12,11 +12,6 @@ private:
 public:
 	//RectCollider();
 	RectCollider(Vector2 size);
-	RectCollider(const RectCollider& other)
-		: _size(other._size) {
-		_type = other._type;
-		CreateVertices();
-	}
 	virtual ~RectCollider();
 
 	virtual void Update() override;
