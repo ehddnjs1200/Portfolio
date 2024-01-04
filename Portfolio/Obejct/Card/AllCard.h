@@ -12,12 +12,19 @@ public:
 
     void ListFilesInFolder(const wstring& folderPath, vector<FileInfo>& filePaths);
 
-	void SetIKA();
+	map<string, shared_ptr<Card>> SetIKA();
 
 	map<string, shared_ptr<Card>> GetAllCard() { return _allCard; }
 
+    shared_ptr<Card> GetCard(const string& key) {
+        auto it = _allCard.find(key);
+        if (it != _allCard.end()) {
+            return it->second;
+        }
+        return nullptr;
+    }
 
-private:
+public:
 	map<string, shared_ptr<Card>>_allCard;
 };
 

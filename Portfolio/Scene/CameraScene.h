@@ -28,7 +28,7 @@ public:
 private:
 	shared_ptr<Ironclad> _ironclad;
 	shared_ptr<GremlinNob> _gremlinNob;
-	shared_ptr<AllCard> _allCard;
+	shared_ptr<Card> _allCard;
 	vector<shared_ptr<Card>> _deck;
 	vector<shared_ptr<Card>> _hand;
 	vector<shared_ptr<Card>> _discarded;

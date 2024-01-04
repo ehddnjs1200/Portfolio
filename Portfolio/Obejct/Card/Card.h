@@ -3,6 +3,11 @@ class Card
 {
 public:
 
+	struct FileInfo {
+		wstring filePath;
+		int fileNumber;  // 파일명에서 추출한 숫자
+	};
+
 	enum Type
 	{
 		Attack,
@@ -16,16 +21,30 @@ public:
 		Special,
 		Rare
 	};
-
+	Card() {};
 	Card(wstring file,Type type, Rarity rarity, string name, int cost, int power, int shield, int force, int agility,int draws, int weaken, int vulnerable, int maxUpgrade, int upgrade, int mWeaken, int mVulnerable, int injury,int combo,int multi, int loss, bool volatility = false, bool extinction = false, bool _isActive = false);
+	Card(const Card& other);
 	~Card();
 
 	void Update();
 	void Render();
 
-	void SetPosition(Vector2 pos, float scale);
+	void SetPosition(Vector2 pos);
 
-	bool IsActive() { return _isActive; }
+	void ListFilesInFolder(const wstring& folderPath, vector<FileInfo>& filePaths);
+
+	map<string, shared_ptr<Card>> SetIKA();
+
+	shared_ptr<Card> GetCard(string key) {
+		auto it = _allCard.find(key);
+		if (it != _allCard.end()) {
+			// 해당 키에 대한 복사본을 만들어 반환
+			return std::make_shared<Card>(*it->second);
+		}
+		return nullptr;
+	}
+
+	shared_ptr<Transform> IsActive() { return _card->GetTransForm(); }
 
 	void Draw() { _isActive = true; }
 
@@ -41,7 +60,7 @@ public:
 private:
 
 	shared_ptr<Quad> _card;
-	shared_ptr<Collider> _col;
+	shared_ptr<RectCollider> _col;
 
 	Type _type = Type::Attack;
 	Rarity _rarity = Rarity::Common;
@@ -69,5 +88,8 @@ private:
 	bool _extinction = false;
 
 	bool _isActive = false;
+
+
+	map<string, shared_ptr<Card>>_allCard;
 };
 

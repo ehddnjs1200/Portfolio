@@ -19,11 +19,14 @@ void CameraScene::Update()
 	_ironclad->Update();
 	_gremlinNob->Update();
 
-	Drow();
+	//Drow();
+
+
+	//_deck[2]->SetPosition(Vector2(CenterX, CenterY));
 
 	_deck[0]->Update();
 	_deck[1]->Update();
-	_deck[2]->Update();
+	//_deck[2]->Update();
 
 	//while (!AllDead(_ironclad) && !AllDead(_gremlinNob))
 	//{
@@ -43,7 +46,7 @@ void CameraScene::Render()
 
 	_deck[0]->Render();
 	_deck[1]->Render();
-	_deck[2]->Render();
+	//_deck[2]->Render();
 }
 
 void CameraScene::PostRender()
@@ -54,18 +57,33 @@ void CameraScene::Init()
 {
 	_ironclad = make_shared<Ironclad>();
 	_gremlinNob = make_shared<GremlinNob>();
-    _allCard = make_shared<AllCard>();
+    _allCard = make_shared<Card>();
 }
 
 
 
 void CameraScene::Setting()
 {
-	
-	for (int i = 0; i < 2; i++)
-		_deck.emplace_back(_allCard->GetAllCard()["IKA0"]);
 
-	_deck.emplace_back(_allCard->GetAllCard()["IKA1"]);
+	_allCard->SetIKA();
+
+	for (int i = 0; i < 2; i++) {
+		shared_ptr<Card> cardIKA0 = _allCard->GetCard("IKA0");
+		if (cardIKA0) {
+			_deck.emplace_back(make_shared<Card>(*cardIKA0));
+		}
+		else {
+			// 예외 처리 또는 로그 기록 등을 추가할 수 있습니다.
+		}
+	}
+	auto ptr0 = _deck[0].get();
+	auto ptr1 = _deck[1].get();
+	//_deck[0]->SetPosition(Vector2(CenterX, CenterY));
+	//_deck[1]->SetPosition(Vector2(CenterX, 0));
+	_deck[0]->IsActive()->SetPos(Vector2(CenterX, 0));
+	_deck[1]->IsActive()->SetPos(Vector2(CenterX, CenterY));
+	//_deck[1]->SetPosition(Vector2(CenterX, 0));
+	//_deck.emplace_back(make_shared<Card>(_allCard->GetAllCard()["IKA1"].get()));
 
 }
 
@@ -102,11 +120,9 @@ void CameraScene::Drow()
 
 	_deck[0]->Draw();
 	_deck[1]->Draw();
-	_deck[2]->Draw();
+	//_deck[2]->Draw();
 
-	_deck[0]->SetPosition(Vector2(0, CenterY), 0.9f);
-	_deck[1]->SetPosition(Vector2(CenterX, 0), 0.9f);
-	_deck[2]->SetPosition(Vector2(CenterX, CenterY), 0.9f);
+
 	//_deck[0]->SetPosition();
 
 }

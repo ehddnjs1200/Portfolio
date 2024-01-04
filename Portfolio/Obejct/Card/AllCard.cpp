@@ -60,7 +60,7 @@ void AllCard::ListFilesInFolder(const wstring& folderPath, vector<FileInfo>& fil
 	FindClose(hFind);
 }
 
-void AllCard::SetIKA()
+map<string, shared_ptr<Card>> AllCard::SetIKA()
 {
 	wstring folderPath = L"Resource/Ironclad/Attack";
 	vector<FileInfo> filePaths;
@@ -72,6 +72,10 @@ void AllCard::SetIKA()
 	for (const auto& fileInfo : filePaths) {
 		file.emplace_back(L"Ironclad/Attack/" + fileInfo.filePath);
 	}
+	shared_ptr<Card> newCard = make_shared<Card>(file[0], Card::Attack, Card::Common, "Strike", 1, 6, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0);
+	_allCard["IKA0"] = newCard;
+
+
 	//int cost, int power, int shield, int force, int agility,int draws, int weaken, int vulnerable, int maxUpgrade, int upgrade, int mWeaken, int mVulnerable, int injury, bool extinction = false
 	_allCard.emplace("IKA0", make_shared<Card>(file[0], Card::Attack, Card::Common, "Strike", 1, 6, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0));
 	_allCard.emplace("IKA1", make_shared<Card>(file[1], Card::Attack, Card::Common, "Bash", 2, 8, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 1, 1, 0));
@@ -107,4 +111,6 @@ void AllCard::SetIKA()
 	_allCard.emplace("IKA29", make_shared<Card>(file[29], Card::Attack, Card::Rare, "Fiend Fire", 1, 7, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, false, true));
 	_allCard.emplace("IKA30", make_shared<Card>(file[30], Card::Attack, Card::Rare, "Immolate", 2, 21, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0));
 	_allCard.emplace("IKA31", make_shared<Card>(file[31], Card::Attack, Card::Rare, "Reaper", 2, 4, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 3, 0, false, true));
+
+	return _allCard;
 }
