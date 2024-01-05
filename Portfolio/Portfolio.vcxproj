@@ -209,6 +209,7 @@
     <ClInclude Include="Framwork\Render\Shader\VertexShader.h" />
     <ClInclude Include="Framwork\Math\Vector2.h" />
     <ClInclude Include="Framwork\Utillity\Utillity.h" />
+    <ClInclude Include="Framwork\UsingCard\UsingCard.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Obejct\Character\Character.cpp" />
@@ -259,6 +260,7 @@
     <ClCompile Include="Framwork\Math\Vector2.cpp" />
     <ClCompile Include="Obejct\BagicObject\Sprite.cpp" />
     <ClCompile Include="Framwork\Utillity\Utillity.cpp" />
+    <ClCompile Include="Framwork\UsingCard\UsingCard.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Portfolio.rc" />

@@ -65,7 +65,7 @@ void CameraScene::Setting()
 	_allCard = make_shared<Card>()->SetIKA(_allCard);
 
 	for (int i = 0; i < 2; i++) {
-		shared_ptr<Card> cardIKA0 = _allCard["IKA0"];
+		shared_ptr<Card> cardIKA0 = _allCard["IKA2"];
 		if (cardIKA0) {
 			_deck.emplace_back(make_shared<Card>(*cardIKA0));
 		}

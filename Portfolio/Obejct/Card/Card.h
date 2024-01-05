@@ -22,7 +22,7 @@ public:
 		Rare
 	};
 	Card() {};
-	Card(wstring file,Type type, Rarity rarity, string name, int cost, int power, int shield, int force, int agility,int draws, int weaken, int vulnerable, int maxUpgrade, int upgrade, int mWeaken, int mVulnerable, int injury,int combo,int multi, int loss, bool volatility = false, bool extinction = false, bool _isActive = false);
+	Card(wstring file, Card::Type type, Card::Rarity rarity, string name, int cost, int maxUpgrade, int upgrade, bool volatility = false, bool extinction = false);
 	Card(const Card& other);
 	~Card();
 
@@ -35,20 +35,20 @@ public:
 
 	map<string, shared_ptr<Card>> SetIKA(map<string, shared_ptr<Card>>_allCard);
 
+	map<string, shared_ptr<Card>> SetIKS(map<string, shared_ptr<Card>> _allCard);
+
+
 	shared_ptr<Transform> IsActive() { return _card->GetTransForm(); }
 
-	void Draw() { _isActive = true; }
-
-	int GetPower() { return _power; }
-	int GetShield() { return _shield; }
-	int GetForce() { return _force; }
-	int GetAgility() { return _agility; }
-	int GetWeaken() { return _weaken; }
-	int GetVulnerable() { return _vulnerable; }
-	int GetDraws() { return _draws; }
-	int GetmWeaken() { return _mWeaken; }
-	int GetmVulnerable() { return _mVulnerable; }
-
+	wstring GetFile() { return _file; }
+	Type GetType() { return _type; }
+	Rarity GetRarity() { return _rarity; }
+	string GetName() { return _name; }
+	int GetCost() { return _cost; }
+	int GetMaxUg() { return _maxUpgrade; }
+	int GetUg() { return _upgrade; }
+	bool GetVolatility() { return _volatility; }
+	bool GetExtinction()  { return _extinction; }
 private:
 
 	shared_ptr<Quad> _card;
@@ -61,24 +61,9 @@ private:
 	wstring _file;
 	string _name;
 	int _cost;
-	int _power;
-	int _shield;
-	int _force;
-	int _agility;
-	int _draws;
-	int _weaken;
-	int _vulnerable;
 	int _maxUpgrade;
 	int _upgrade;
-	int _mWeaken;
-	int _mVulnerable;
-	int _injury;
-	int _combo;
-	int _multi;
-	int _loss;
 	bool _volatility = false;
 	bool _extinction = false;
-
-	bool _isActive = false;
 };
 

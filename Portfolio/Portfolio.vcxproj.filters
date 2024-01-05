@@ -144,6 +144,9 @@
     <ClInclude Include="Obejct\Character\Character.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Framwork\UsingCard\UsingCard.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Portfolio.cpp">
@@ -258,6 +261,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Obejct\Character\Character.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\UsingCard\UsingCard.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
