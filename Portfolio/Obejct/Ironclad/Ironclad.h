@@ -12,9 +12,11 @@ public:
 	void Setting();
 
 	int GetDraws() { return _draws; }
+	int SetCost(int cost) { return _cost + cost; }
 
 private:
 
+	int _cost = 3;
 	int _maxHp = 80;
 	int _draws = 5;
 };

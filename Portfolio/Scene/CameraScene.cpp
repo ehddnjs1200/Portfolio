@@ -121,20 +121,6 @@ void CameraScene::Drow()
 
 void CameraScene::UsingCard(shared_ptr<Character> enemy, shared_ptr<Card> card)
 {
-	if (enemy->GetVulnerable() > 0 && _ironclad->GetWeaken() > 0)
-		enemy->SetHp(enemy->GetHp() - (((card->GetPower() + _ironclad->GetForce()) * 1.5f) * 0.75));
-	else if (enemy->GetVulnerable() > 0)
-		enemy->SetHp(enemy->GetHp() - ((card->GetPower() + _ironclad->GetForce()) * 1.5f));
-	else if (_ironclad->GetWeaken() > 0)
-		enemy->SetHp(enemy->GetHp() - ((card->GetPower() + _ironclad->GetForce()) * 0.75));
-	else
-		enemy->SetHp(enemy->GetHp() - (card->GetPower() + _ironclad->GetForce()));
 
-
-	if (card->GetmVulnerable()>0)
-		_ironclad->SetVulnerable(_ironclad->GetVulnerable() + card->GetmVulnerable());
-
-	if (card->GetmWeaken()>0)
-		_ironclad->SetWeaken(_ironclad->GetWeaken() + card->GetmWeaken());
 
 }
