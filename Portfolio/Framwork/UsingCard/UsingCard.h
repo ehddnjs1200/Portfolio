@@ -242,11 +242,6 @@ static void UsingCard(shared_ptr<Card> card,shared_ptr<Ironclad> player,shared_p
 			else
 				monster->SetHp(monster->GetHp() - (_attack + player->GetForce()));
 
-			if (player->GetWeaken()>0)
-			{
-				player->SetWeaken(_attack)
-			}
-
 		}
 			break;
 		case 10:

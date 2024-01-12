@@ -24,14 +24,14 @@ public:
 	}
 
 	void Drow();
-	void UsingCard(shared_ptr<Character> enemy, shared_ptr<Card> card);
 
 private:
 	shared_ptr<Ironclad> _ironclad;
 	shared_ptr<GremlinNob> _gremlinNob;
 	map<string, shared_ptr<Card>>_allCard;
 	vector<shared_ptr<Card>> _deck;
+	vector<shared_ptr<Card>> _deck2;
 	vector<shared_ptr<Card>> _hand;
-	shared_ptr<Card> _discarded;
+	vector<shared_ptr<Card>> _discarded;
 };
 

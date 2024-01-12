@@ -44,7 +44,6 @@ void Card::Render()
 void Card::SetPosition(Vector2 pos)
 {
 	_card->GetTransForm()->GetPos() = pos;
-	_card->GetTransForm()->GetScale() *= 0.5f;
 }
 
 bool CompareFileNumbers(const Card::FileInfo& a, const Card::FileInfo& b) {
@@ -149,52 +148,52 @@ map<string, shared_ptr<Card>> Card::SetIKA(map<string, shared_ptr<Card>>_allCard
 	return _allCard;
 }
 
-map<string, shared_ptr<Card>> Card::SetIKS(map<string, shared_ptr<Card>>_allCard)
-{
-	wstring folderPath = L"Resource/Ironclad/Skill";
-	vector<FileInfo> filePaths;
-	Card::ListFilesInFolder(folderPath, filePaths);
-	sort(filePaths.begin(), filePaths.end(), CompareFileNumbers);
-
-	vector<wstring> file;
-
-	for (const auto& fileInfo : filePaths) {
-		file.emplace_back(L"Ironclad/Skill/" + fileInfo.filePath);
-	}
-
-
-	//int cost, int power, int shield, int force, int agility,int draws, int weaken, int vulnerable, int maxUpgrade, int upgrade, int mWeaken, int mVulnerable, int injury, bool extinction = false
-	_allCard.emplace("IKS0", make_shared<Card>(file[0], Card::Skill, Card::Common, "Defend", 1, 1, 0));
-	_allCard.emplace("IKS1", make_shared<Card>(file[1], Card::Skill, Card::Common, "Armaments", 1, 1, 0));
-	_allCard.emplace("IKS2", make_shared<Card>(file[2], Card::Skill, Card::Common, "Flex", 0, 1, 0));
-	_allCard.emplace("IKS3", make_shared<Card>(file[3], Card::Skill, Card::Common, "Havoc Slam", 1, 1, 0));
-	_allCard.emplace("IKS4", make_shared<Card>(file[4], Card::Skill, Card::Common, "Shrug It Off", 1, 1, 0));
-	_allCard.emplace("IKS5", make_shared<Card>(file[5], Card::Skill, Card::Common, "True Grit", 1, 1, 0));
-	_allCard.emplace("IKS6", make_shared<Card>(file[6], Card::Skill, Card::Common, "Warcry", 0, 1, 0, false, true));
-	
-	_allCard.emplace("IKS7", make_shared<Card>(file[7], Card::Skill, Card::Special, "Battle Trance", 0,  1, 0));
-	_allCard.emplace("IKS8", make_shared<Card>(file[8], Card::Skill, Card::Special, "Dual Wield", 1, 1, 0));
-	_allCard.emplace("IKS9", make_shared<Card>(file[9], Card::Skill, Card::Special, "Bloodletting", 0, 1, 0));
-	_allCard.emplace("IKS10", make_shared<Card>(file[10], Card::Skill, Card::Special, "Burning Pact", 1, 1, 0));
-	_allCard.emplace("IKS11", make_shared<Card>(file[11], Card::Skill, Card::Special, "Disarm", 1, 1, 0, false, true));
-	_allCard.emplace("IKS12", make_shared<Card>(file[12], Card::Skill, Card::Special, "Entrench", 2, 1, 0));
-	_allCard.emplace("IKS13", make_shared<Card>(file[13], Card::Skill, Card::Special, "(Flame Barrier", 2, 1, 0));
-	_allCard.emplace("IKS14", make_shared<Card>(file[14], Card::Skill, Card::Special, "Ghostly Armor", 1, 1, 0, true));
-	_allCard.emplace("IKS15", make_shared<Card>(file[15], Card::Skill, Card::Special, "Infernal Blade", 1, 1, 0, false, true));
-	_allCard.emplace("IKS16", make_shared<Card>(file[16], Card::Skill, Card::Special, "Intimidate", 0, 1, 0, false, true));
-	_allCard.emplace("IKS17", make_shared<Card>(file[17], Card::Skill, Card::Special, "Power Through", 1, 1, 0));
-	_allCard.emplace("IKS18", make_shared<Card>(file[18], Card::Skill, Card::Special, "Rage", 0, 1, 0));
-	_allCard.emplace("IKS19", make_shared<Card>(file[19], Card::Skill, Card::Special, "Second Wind", 1, 1, 0));
-	_allCard.emplace("IKS20", make_shared<Card>(file[20], Card::Skill, Card::Special, "Seeing Red", 1, 1, 0));
-	_allCard.emplace("IKS21", make_shared<Card>(file[21], Card::Skill, Card::Special, "Sentinel", 1, 1, 0));
-	_allCard.emplace("IKS22", make_shared<Card>(file[22], Card::Skill, Card::Special, "Shockwave", 2, 1, 0));
-	_allCard.emplace("IKS23", make_shared<Card>(file[23], Card::Skill, Card::Special, "Spot Weakness", 1, 1, 0));
-	
-	_allCard.emplace("IKS24", make_shared<Card>(file[24], Card::Skill, Card::Rare, "Double Tap", 1, 1, 0));
-	_allCard.emplace("IKS25", make_shared<Card>(file[25], Card::Skill, Card::Rare, "Exhume", 1, 1, 0, false, true));
-	_allCard.emplace("IKS26", make_shared<Card>(file[26], Card::Skill, Card::Rare, "Impervious", 2, 1, 0,false, true));
-	_allCard.emplace("IKS27", make_shared<Card>(file[27], Card::Skill, Card::Rare, "Limit Break", 1, 1, 0,false, true));
-	_allCard.emplace("IKS28", make_shared<Card>(file[28], Card::Skill, Card::Rare, "Offering", 0, 1, 0, false, true));
-
-	return _allCard;
-}
+//map<string, shared_ptr<Card>> Card::SetIKS(map<string, shared_ptr<Card>>_allCard)
+//{
+//	wstring folderPath = L"Resource/Ironclad/Skill";
+//	vector<FileInfo> filePaths;
+//	Card::ListFilesInFolder(folderPath, filePaths);
+//	sort(filePaths.begin(), filePaths.end(), CompareFileNumbers);
+//
+//	vector<wstring> file;
+//
+//	for (const auto& fileInfo : filePaths) {
+//		file.emplace_back(L"Ironclad/Skill/" + fileInfo.filePath);
+//	}
+//
+//
+//	//int cost, int power, int shield, int force, int agility,int draws, int weaken, int vulnerable, int maxUpgrade, int upgrade, int mWeaken, int mVulnerable, int injury, bool extinction = false
+//	_allCard.emplace("IKS0", make_shared<Card>(file[0], Card::Skill, Card::Common, "Defend", 1, 1, 0));
+//	_allCard.emplace("IKS1", make_shared<Card>(file[1], Card::Skill, Card::Common, "Armaments", 1, 1, 0));
+//	_allCard.emplace("IKS2", make_shared<Card>(file[2], Card::Skill, Card::Common, "Flex", 0, 1, 0));
+//	_allCard.emplace("IKS3", make_shared<Card>(file[3], Card::Skill, Card::Common, "Havoc Slam", 1, 1, 0));
+//	_allCard.emplace("IKS4", make_shared<Card>(file[4], Card::Skill, Card::Common, "Shrug It Off", 1, 1, 0));
+//	_allCard.emplace("IKS5", make_shared<Card>(file[5], Card::Skill, Card::Common, "True Grit", 1, 1, 0));
+//	_allCard.emplace("IKS6", make_shared<Card>(file[6], Card::Skill, Card::Common, "Warcry", 0, 1, 0, false, true));
+//	
+//	_allCard.emplace("IKS7", make_shared<Card>(file[7], Card::Skill, Card::Special, "Battle Trance", 0,  1, 0));
+//	_allCard.emplace("IKS8", make_shared<Card>(file[8], Card::Skill, Card::Special, "Dual Wield", 1, 1, 0));
+//	_allCard.emplace("IKS9", make_shared<Card>(file[9], Card::Skill, Card::Special, "Bloodletting", 0, 1, 0));
+//	_allCard.emplace("IKS10", make_shared<Card>(file[10], Card::Skill, Card::Special, "Burning Pact", 1, 1, 0));
+//	_allCard.emplace("IKS11", make_shared<Card>(file[11], Card::Skill, Card::Special, "Disarm", 1, 1, 0, false, true));
+//	_allCard.emplace("IKS12", make_shared<Card>(file[12], Card::Skill, Card::Special, "Entrench", 2, 1, 0));
+//	_allCard.emplace("IKS13", make_shared<Card>(file[13], Card::Skill, Card::Special, "(Flame Barrier", 2, 1, 0));
+//	_allCard.emplace("IKS14", make_shared<Card>(file[14], Card::Skill, Card::Special, "Ghostly Armor", 1, 1, 0, true));
+//	_allCard.emplace("IKS15", make_shared<Card>(file[15], Card::Skill, Card::Special, "Infernal Blade", 1, 1, 0, false, true));
+//	_allCard.emplace("IKS16", make_shared<Card>(file[16], Card::Skill, Card::Special, "Intimidate", 0, 1, 0, false, true));
+//	_allCard.emplace("IKS17", make_shared<Card>(file[17], Card::Skill, Card::Special, "Power Through", 1, 1, 0));
+//	_allCard.emplace("IKS18", make_shared<Card>(file[18], Card::Skill, Card::Special, "Rage", 0, 1, 0));
+//	_allCard.emplace("IKS19", make_shared<Card>(file[19], Card::Skill, Card::Special, "Second Wind", 1, 1, 0));
+//	_allCard.emplace("IKS20", make_shared<Card>(file[20], Card::Skill, Card::Special, "Seeing Red", 1, 1, 0));
+//	_allCard.emplace("IKS21", make_shared<Card>(file[21], Card::Skill, Card::Special, "Sentinel", 1, 1, 0));
+//	_allCard.emplace("IKS22", make_shared<Card>(file[22], Card::Skill, Card::Special, "Shockwave", 2, 1, 0));
+//	_allCard.emplace("IKS23", make_shared<Card>(file[23], Card::Skill, Card::Special, "Spot Weakness", 1, 1, 0));
+//	
+//	_allCard.emplace("IKS24", make_shared<Card>(file[24], Card::Skill, Card::Rare, "Double Tap", 1, 1, 0));
+//	_allCard.emplace("IKS25", make_shared<Card>(file[25], Card::Skill, Card::Rare, "Exhume", 1, 1, 0, false, true));
+//	_allCard.emplace("IKS26", make_shared<Card>(file[26], Card::Skill, Card::Rare, "Impervious", 2, 1, 0,false, true));
+//	_allCard.emplace("IKS27", make_shared<Card>(file[27], Card::Skill, Card::Rare, "Limit Break", 1, 1, 0,false, true));
+//	_allCard.emplace("IKS28", make_shared<Card>(file[28], Card::Skill, Card::Rare, "Offering", 0, 1, 0, false, true));
+//
+//	return _allCard;
+//}

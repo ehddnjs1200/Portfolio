@@ -35,7 +35,7 @@ public:
 
 	map<string, shared_ptr<Card>> SetIKA(map<string, shared_ptr<Card>>_allCard);
 
-	map<string, shared_ptr<Card>> SetIKS(map<string, shared_ptr<Card>> _allCard);
+	//map<string, shared_ptr<Card>> SetIKS(map<string, shared_ptr<Card>> _allCard);
 
 
 	shared_ptr<Transform> IsActive() { return _card->GetTransForm(); }
@@ -60,9 +60,9 @@ private:
 	Vector2 _pos = { 0,0 };
 	wstring _file;
 	string _name;
-	int _cost;
-	int _maxUpgrade;
-	int _upgrade;
+	int _cost = 0;
+	int _maxUpgrade = 1;
+	int _upgrade = 0;
 	bool _volatility = false;
 	bool _extinction = false;
 };
