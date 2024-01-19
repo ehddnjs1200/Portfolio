@@ -37,8 +37,11 @@ public:
 
 	//map<string, shared_ptr<Card>> SetIKS(map<string, shared_ptr<Card>> _allCard);
 
+	shared_ptr<Collider> GetCollider() { return _col; }
 
 	shared_ptr<Transform> IsActive() { return _card->GetTransForm(); }
+
+	Vector2 GetPos() { return _pos; }
 
 	wstring GetFile() { return _file; }
 	Type GetType() { return _type; }

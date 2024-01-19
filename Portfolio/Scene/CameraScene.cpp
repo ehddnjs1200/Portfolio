@@ -21,6 +21,62 @@ void CameraScene::Update()
 	_ironclad->Update();
 	_gremlinNob->Update();
 
+	//bool a = false;
+	//vector<Card> s;
+
+	//if (_hand[i]->GetCollider()->IsCollision(mousepos))
+	//{
+	//	s -> ? ? ? ;
+	//	if (s[0]->GetCollider()->IsCollision(mousepos) && s[1]->GetCollider()->IsCollision(mousepos)
+	//	{
+	//		s[1]->RED
+	//	}
+	//	else
+	//	{
+	//		s[0]->Green
+	//	}
+	//}
+	
+
+	if (!_hand.empty())
+	{
+		int a = _hand.size();
+		for (int i = _hand.size() - 1; i > -1; i--)
+		{
+			if (_hand[i]->GetCollider()->IsCollision(mousepos))
+			{
+				if (a == _hand.size())
+				{
+					a = i;
+					_hand[a]->GetCollider()->SetRed();
+				}
+				
+				if (a < i)
+				{
+					_hand[a]->GetCollider()->SetGreen();
+					_hand[i]->GetCollider()->SetRed();
+					a = i;
+				}
+
+			}
+			else
+			{
+				a = _hand.size();
+			}
+		}
+
+	}
+		
+		//if (_hand[1]->GetCollider()->IsCollision(mousepos))
+		//{
+
+		//	_hand[1]->GetCollider()->SetRed();
+		//}	
+
+		//else
+		//	_hand[1]->GetCollider()->SetGreen();
+	
+
 	if (KeyDown('Q'))
 	{
 	ShuffleDeck();
@@ -41,6 +97,10 @@ void CameraScene::Update()
 			_hand.erase(_hand.begin(), _hand.begin() + _hand.size());
 		}
 	}
+	
+	
+
+
 	//while (!AllDead(_ironclad) && !AllDead(_gremlinNob))
 	//{
 		//UsingCard(_deck2[2], _ironclad, _gremlinNob);
@@ -144,8 +204,6 @@ void CameraScene::Drow()
 	_deck2.erase(_deck2.begin(), _deck2.begin() + (a - b));
 
 	for (int i = 0; i < _hand.size(); i++)
-	{
 		_hand[i]->SetPosition(Vector2(300.0f + (i * 80), 0.0f));
-	}
 
 }

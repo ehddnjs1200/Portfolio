@@ -43,7 +43,6 @@ void Program::Render()
 	_scene->PostRender();
 
 	ImGui::Text("FPS : %d", FPS);
-
 	ImGui::Render();
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 

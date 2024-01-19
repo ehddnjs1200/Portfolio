@@ -27,21 +27,6 @@ public:
 
 	Vector2 GetWorldPos()
 	{
-	// 11 12 13 14
-	// 21 22 23 24
-	// 31 32 33 34
-	// 41 42 43 44
-	
-	// 41(x), 42(y), 43(z), 44(a) =? Position
-	// 11 22 33 44 => Scale
-	// 11 12 13 => X방향(translate)
-	// 21 22 23 => Y방향
-	// 31 32 33 => Z방향
-
-	// pos / worldPos
-	// Pos : 내가 가지고있는 좌표
-	// WorldPos : Buffer넣어서 Update할경우 생성
-
 		XMFLOAT4X4 matrix;
 		XMStoreFloat4x4(&matrix, _srt);
 		return Vector2(matrix._41, matrix._42);
