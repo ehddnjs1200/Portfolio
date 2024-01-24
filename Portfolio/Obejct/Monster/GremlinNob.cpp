@@ -14,6 +14,7 @@ GremlinNob::~GremlinNob()
 void GremlinNob::Update()
 {
 	_character->Update();
+	_col->Update  ();
 	if (GetVulnerable() >0)
 		SetVulnerable(GetVulnerable() - 1);
 
@@ -25,11 +26,14 @@ void GremlinNob::Update()
 void GremlinNob::Render()
 {
 	_character->Render();
+	_col->Render();
 }
 
 void GremlinNob::Init()
 {
 	_character = make_shared<Quad>(L"Monster/Gremlin Nob.png");
+	_col = make_shared<RectCollider>(_character->GetTextureSize());
+	_col->SetParent(_character->GetTransForm());
 }
 
 void GremlinNob::Setting()

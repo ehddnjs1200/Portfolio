@@ -46,6 +46,24 @@ void Card::SetPosition(Vector2 pos)
 	_card->GetTransForm()->GetPos() = pos;
 }
 
+void Card::Cellact()
+{
+	if (!_choice)
+	{
+		_card->GetTransForm()->GetPos().y += 30.0f;
+		_choice = true;
+	}
+}
+
+void Card::UnCelled()
+{
+	if (_choice)
+	{
+		_card->GetTransForm()->GetPos().y -= 30.0f;
+		_choice = false;
+	}
+}
+
 bool CompareFileNumbers(const Card::FileInfo& a, const Card::FileInfo& b) {
 	return a.fileNumber < b.fileNumber;
 }

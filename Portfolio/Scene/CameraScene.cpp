@@ -36,11 +36,20 @@ void CameraScene::Update()
 	//		s[0]->Green
 	//	}
 	//}
-	
+	if (KeyDown('Q'))
+	{
+		ShuffleDeck();
+		Drow();
+		
+	}
+		for (int i = 0; i < _hand.size(); i++)
+	{
+		_hand[i]->Update();
+	}
 
 	if (!_hand.empty())
 	{
-		int a = _hand.size();
+		; a = _hand.size();
 		for (int i = _hand.size() - 1; i > -1; i--)
 		{
 			if (_hand[i]->GetCollider()->IsCollision(mousepos))
@@ -49,21 +58,50 @@ void CameraScene::Update()
 				{
 					a = i;
 					_hand[a]->GetCollider()->SetRed();
+					_hand[a]->Cellact();
 				}
-				
-				if (a < i)
+				else
 				{
-					_hand[a]->GetCollider()->SetGreen();
-					_hand[i]->GetCollider()->SetRed();
-					a = i;
+					if (a < i)
+					{
+						_hand[i]->GetCollider()->SetRed();
+						_hand[i]->Cellact();
+						_hand[a]->GetCollider()->SetGreen();
+						_hand[a]->UnCelled();
+						a = i;
+					}
+					else
+					{
+						_hand[i]->GetCollider()->SetGreen();
+						_hand[i]->UnCelled();
+					}	
 				}
-
+				if (KeyDown(VK_LBUTTON))
+				{
+					_hand[a]->Cellact();
+				}
+				if (KeyUp(VK_LBUTTON))
+				{
+					_hand[a]->UnCelled();
+				}
 			}
 			else
 			{
-				a = _hand.size();
+				_hand[i]->GetCollider()->SetGreen();
+				_hand[i]->UnCelled();
 			}
 		}
+		/*while (KeyDown(VK_LBUTTON))
+		{
+			_hand[a]->Cellact();
+			if (KeyUp(VK_LBUTTON))
+			{
+				_hand[a]->UnCelled();
+				break;
+			}
+		}*/
+
+		
 
 	}
 		
@@ -77,15 +115,8 @@ void CameraScene::Update()
 		//	_hand[1]->GetCollider()->SetGreen();
 	
 
-	if (KeyDown('Q'))
-	{
-	ShuffleDeck();
-		Drow();
-	}
-	for (int i = 0; i < _hand.size(); i++)
-	{
-		_hand[i]->Update();
-	}
+
+
 	if (KeyDown('E'))
 	{
 		if (_hand.size() != 0)
@@ -169,12 +200,12 @@ void CameraScene::ShuffleDeck()
 
 void CameraScene::Drow()
 {
-	int a = _ironclad->GetDraws();
+	int draw = _ironclad->GetDraws();
 	
-	if (_discarded.size() + _deck2.size() < a)
-		a = _discarded.size() + _deck2.size();
+	if (_discarded.size() + _deck2.size() < draw)
+		draw = _discarded.size() + _deck2.size();
 	int b = 0;
-	for (int i = 0; i < a; i++)
+	for (int i = 0; i < draw; i++)
 	{
 		if (_deck2.size() == 0)
 		{
@@ -201,7 +232,7 @@ void CameraScene::Drow()
 			_hand.emplace_back(make_shared<Card>(*_deck2[i]));
 
 	}
-	_deck2.erase(_deck2.begin(), _deck2.begin() + (a - b));
+	_deck2.erase(_deck2.begin(), _deck2.begin() + (draw - b));
 
 	for (int i = 0; i < _hand.size(); i++)
 		_hand[i]->SetPosition(Vector2(300.0f + (i * 80), 0.0f));

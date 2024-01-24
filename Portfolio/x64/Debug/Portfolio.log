@@ -1,8 +1,7 @@
 ﻿  CameraScene.cpp
-C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\Portfolio\Scene\CameraScene.cpp(43,23): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\Portfolio\Scene\CameraScene.cpp(44,3): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\Portfolio\Scene\CameraScene.cpp(64,21): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\Portfolio\Scene\CameraScene.cpp(175,40): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\Portfolio\Scene\CameraScene.cpp(194,21): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\Portfolio\Scene\CameraScene.cpp(52,21): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\Portfolio\Scene\CameraScene.cpp(53,3): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\Portfolio\Scene\CameraScene.cpp(206,43): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\Portfolio\Scene\CameraScene.cpp(225,21): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\Portfolio\Framwork\Utillity\KeyBoard.h(39): warning C4715: 'KeyBoard::GetInstance': 모든 제어 경로에서 값을 반환하지는 않습니다.
   Portfolio.vcxproj -> C:\Users\정동원\OneDrive\바탕 화면\포트폴리오용\Portfolio\x64\Debug\Portfolio.exe

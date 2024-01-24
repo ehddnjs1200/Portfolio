@@ -31,6 +31,10 @@ public:
 
 	void SetPosition(Vector2 pos);
 
+	void Cellact();
+
+	void UnCelled();
+
 	void ListFilesInFolder(const wstring& folderPath, vector<FileInfo>& filePaths);
 
 	map<string, shared_ptr<Card>> SetIKA(map<string, shared_ptr<Card>>_allCard);
@@ -68,5 +72,7 @@ private:
 	int _upgrade = 0;
 	bool _volatility = false;
 	bool _extinction = false;
+
+	bool _choice = false;
 };
 

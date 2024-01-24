@@ -27,7 +27,7 @@ public:
 protected:
 
 	shared_ptr<Quad> _character;
-
+	shared_ptr<Collider> _col;
 	int _hp = 80;
 	int _shield = 0;
 	int _force = 0;
