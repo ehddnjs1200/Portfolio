@@ -35,5 +35,6 @@ private:
 	vector<shared_ptr<Card>> _discarded;
 
 	int a = 0;
+	int hand2;
 };
 

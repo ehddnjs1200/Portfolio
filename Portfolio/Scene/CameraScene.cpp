@@ -40,7 +40,6 @@ void CameraScene::Update()
 	{
 		ShuffleDeck();
 		Drow();
-		
 	}
 		for (int i = 0; i < _hand.size(); i++)
 	{
@@ -49,7 +48,7 @@ void CameraScene::Update()
 
 	if (!_hand.empty())
 	{
-		; a = _hand.size();
+		a = _hand.size();
 		for (int i = _hand.size() - 1; i > -1; i--)
 		{
 			if (_hand[i]->GetCollider()->IsCollision(mousepos))
@@ -77,45 +76,31 @@ void CameraScene::Update()
 					}	
 				}
 				if (KeyDown(VK_LBUTTON))
-				{
-					_hand[a]->Cellact();
-				}
-				if (KeyUp(VK_LBUTTON))
-				{
-					_hand[a]->UnCelled();
-				}
+					hand2 = a;
 			}
 			else
 			{
-				_hand[i]->GetCollider()->SetGreen();
-				_hand[i]->UnCelled();
+				if (hand2 != i)
+				{
+					_hand[i]->GetCollider()->SetGreen();
+					_hand[i]->UnCelled();
+				}
 			}
 		}
-		/*while (KeyDown(VK_LBUTTON))
+		
+		if (hand2 < _hand.size())
 		{
-			_hand[a]->Cellact();
+			if (KeyDown(VK_LBUTTON))
+			{
+				_hand[hand2]->Cellact();
+			}
 			if (KeyUp(VK_LBUTTON))
 			{
-				_hand[a]->UnCelled();
-				break;
+				_hand[hand2]->UnCelled();
+				hand2 = _hand.size();
 			}
-		}*/
-
-		
-
+		}
 	}
-		
-		//if (_hand[1]->GetCollider()->IsCollision(mousepos))
-		//{
-
-		//	_hand[1]->GetCollider()->SetRed();
-		//}	
-
-		//else
-		//	_hand[1]->GetCollider()->SetGreen();
-	
-
-
 
 	if (KeyDown('E'))
 	{
@@ -134,8 +119,8 @@ void CameraScene::Update()
 
 	//while (!AllDead(_ironclad) && !AllDead(_gremlinNob))
 	//{
-		//UsingCard(_deck2[2], _ironclad, _gremlinNob);
-		//_discarded.emplace_back(make_shared<Card>(*_deck2[2]));
+	//	UsingCard(_deck2[2], _ironclad, _gremlinNob);
+	//	_discarded.emplace_back(make_shared<Card>(*_deck2[2]));
 	//}
 
 
