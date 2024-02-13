@@ -2,7 +2,8 @@
 #include "Ironclad.h"
 
 
-Ironclad::Ironclad()
+Ironclad::Ironclad(int cost, int maxHp, int draws)
+	:_cost(cost), _maxHp(maxHp), _draws(draws)
 {
 	Init();
 	Setting();
@@ -32,8 +33,6 @@ void Ironclad::Init()
 void Ironclad::Setting()
 {
 	SetPos(Vector2(CenterX - 240, CenterY - 10), 0.8f);
-	_maxHp = 80;
-	_hp = 80;
+	_hp = _maxHp;
 	_hpBar = make_shared<HealthBar>(_maxHp, _hp,30);
-
 }

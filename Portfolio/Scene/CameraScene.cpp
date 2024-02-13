@@ -21,8 +21,16 @@ void CameraScene::Update()
 	_backgrund->Update();
 	_ironclad->Update();
 	_gremlinNob->Update();
+
+	if (KeyDown('W'))
+	{
+		_ironclad->SetMaxHp(20);
+		_ironclad->HP()->PlusMaxHp(20);
+	}
+
 	if (KeyDown('Q'))
 	{
+		_ironclad->HP()->DecreaseHp(30);
 		ShuffleDeck();
 		Drow();
 	}
@@ -89,6 +97,7 @@ void CameraScene::Update()
 
 	if (KeyDown('E'))
 	{
+		_ironclad->HP()->IncreaseHp(30);
 		if (_hand.size() != 0)
 		{
 			for (int i = 0; i < _hand.size(); i++)
@@ -98,16 +107,6 @@ void CameraScene::Update()
 			_hand.erase(_hand.begin(), _hand.begin() + _hand.size());
 		}
 	}
-	
-	
-
-
-	//while (!AllDead(_ironclad) && !AllDead(_gremlinNob))
-	//{
-
-
-	//}
-
 
 }
 
@@ -131,7 +130,7 @@ void CameraScene::PostRender()
 
 void CameraScene::Init()
 {
-	_ironclad = make_shared<Ironclad>();
+	_ironclad = make_shared<Ironclad>(3,180,5);
 	_gremlinNob = make_shared<GremlinNob>();
 	_backgrund = make_shared<Map1>();
 }

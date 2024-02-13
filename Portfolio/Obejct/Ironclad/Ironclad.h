@@ -3,7 +3,7 @@
 class Ironclad : public Character
 {
 public:
-	Ironclad();
+	Ironclad(int cost, int maxHp, int draws);
 	virtual ~Ironclad();
 
 	virtual void Update() override;
@@ -14,10 +14,12 @@ public:
 	int GetDraws() { return _draws; }
 	int SetCost(int cost) { return _cost + cost; }
 
+	void SetMaxHp(int cost) { _maxHp += cost; }
+
 private:
 
-	int _cost = 3;
-	int _maxHp = 80;
-	int _draws = 5;
+	int _cost;
+	int _maxHp;
+	int _draws;
 };
 
