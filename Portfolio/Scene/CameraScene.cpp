@@ -13,29 +13,14 @@ CameraScene::CameraScene()
 
 CameraScene::~CameraScene()
 {
+
 }
 
 void CameraScene::Update()
 {
-
+	_backgrund->Update();
 	_ironclad->Update();
 	_gremlinNob->Update();
-
-	//bool a = false;
-	//vector<Card> s;
-
-	//if (_hand[i]->GetCollider()->IsCollision(mousepos))
-	//{
-	//	s -> ? ? ? ;
-	//	if (s[0]->GetCollider()->IsCollision(mousepos) && s[1]->GetCollider()->IsCollision(mousepos)
-	//	{
-	//		s[1]->RED
-	//	}
-	//	else
-	//	{
-	//		s[0]->Green
-	//	}
-	//}
 	if (KeyDown('Q'))
 	{
 		ShuffleDeck();
@@ -119,8 +104,8 @@ void CameraScene::Update()
 
 	//while (!AllDead(_ironclad) && !AllDead(_gremlinNob))
 	//{
-	//	UsingCard(_deck2[2], _ironclad, _gremlinNob);
-	//	_discarded.emplace_back(make_shared<Card>(*_deck2[2]));
+
+
 	//}
 
 
@@ -128,6 +113,7 @@ void CameraScene::Update()
 
 void CameraScene::Render()
 {
+	_backgrund->Render();
 	_ironclad->Render();
 	_gremlinNob->Render();
 
@@ -147,7 +133,7 @@ void CameraScene::Init()
 {
 	_ironclad = make_shared<Ironclad>();
 	_gremlinNob = make_shared<GremlinNob>();
-	
+	_backgrund = make_shared<Map1>();
 }
 
 

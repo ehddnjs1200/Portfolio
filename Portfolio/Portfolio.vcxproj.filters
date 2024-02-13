@@ -132,9 +132,6 @@
     <ClInclude Include="Obejct\Card\Card.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Obejct\HealthBar\HealthBar.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Obejct\Card\AllCard.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -145,6 +142,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Framwork\UsingCard\UsingCard.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Obejct\HealthBar\HealthBar.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Obejct\Map\Map1.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -251,9 +254,6 @@
     <ClCompile Include="Obejct\Card\Card.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Obejct\HealthBar\HealthBar.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Obejct\Card\AllCard.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -264,6 +264,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Framwork\UsingCard\UsingCard.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Obejct\HealthBar\HealthBar.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Obejct\Map\Map1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -640,6 +646,18 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="Resource\Monster\Gremlin Nob.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\backHp.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\hp.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map1-1.jpg">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map1-2.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

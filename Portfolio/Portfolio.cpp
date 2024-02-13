@@ -92,21 +92,26 @@ void ICreate()
     Device::Create(hWnd);
     KeyBoard::Create();
     Timer::Create();
+    Camera::Create();
+    //DXWrite::Create();
+
     StateManager::Create();
     TextureManager::Create();
-    Camera::Create();
     EffectManager::Create();
 }
 
 void IDelete()
 {
-    Device::Delete();
     KeyBoard::Delete();
     Timer::Delete();
+    Camera::Delete();
+    //DXWrite::Delete();
+
     StateManager::Delete();
     TextureManager::Delete();
-    Camera::Delete();
     EffectManager::Delete();
+
+    Device::Delete();
 }
 
 //

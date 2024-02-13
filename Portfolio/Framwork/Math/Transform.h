@@ -38,6 +38,14 @@ public:
 			return Vector2(_scale.x * _parent->GetScale().x, _scale.y * _parent->GetScale().y);
 		return _scale;
 	}
+
+	Vector2 GetLeftRightX() {
+		float leftX = _pos.x - (_scale.x / 2);
+		float rightX = _pos.x + (_scale.x / 2);
+
+		return { leftX, rightX };
+	}
+
 public:
 	Vector2	_pos;
 	Vector2	_scale;

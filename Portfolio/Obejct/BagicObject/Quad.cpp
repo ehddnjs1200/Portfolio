@@ -10,6 +10,16 @@ Quad::Quad(wstring file, wstring ps)
     _transform = make_shared<Transform>();
 }
 
+Quad::Quad(wstring file, float size, wstring ps)
+{
+    _size = size;
+    _texture = TextureAdd(file);
+    CreateShader(ps);
+    CreateBuffer();
+
+    _transform = make_shared<Transform>();
+}
+
 Quad::~Quad()
 {
 }
@@ -44,10 +54,14 @@ void Quad::CreateVertices()
 
     // 1280 720
     // 640 360
-    Vector2 halfsize;
-    halfsize.x = _texture->GetSize().x;
-    halfsize.y = _texture->GetSize().y;
-
+    if (_size == 0)
+        halfsize.x = _texture->GetSize().x;
+    else
+    {
+        halfsize.x = _texture->GetSize().x;
+        halfsize.x /= _size;
+    }
+        halfsize.y = _texture->GetSize().y;
     {
         v.pos = XMFLOAT3(-halfsize.x, halfsize.y, 0.0f);
         v.uv = { 0.0f, 0.0f };
@@ -92,3 +106,6 @@ void Quad::CreateShader(wstring ps)
     _vertexShader = make_shared<VertexShader>(L"WVPVertexShader");
     _pixelShader = make_shared<PixelShader>(ps);
 }
+
+
+

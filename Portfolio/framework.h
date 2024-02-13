@@ -22,6 +22,7 @@
 #include <sstream>
 #include <algorithm>
 #include <random>
+#include <string>
 // 스마트포인터
 // ComPtr
 // get : 포인터 하나를 반환
@@ -41,6 +42,13 @@
 // DirectXTex 라이브러리
 #include "../DirectXTex/DirectXTex.h"
 
+
+#include <d2d1_1.h>
+#include <dwrite.h>
+
+#pragma comment(lib, "d2d1.lib")
+#pragma comment(lib, "dwrite.lib")
+
 // ImGui
 #include "../ImGUI/imgui.h"
 #include "../ImGUI/imgui_impl_dx11.h"
@@ -50,12 +58,13 @@ using namespace std;
 using namespace DirectX; // DX에 관련된 데이터 타입을 사용하기 위해서
 using namespace Microsoft::WRL;
 
-
 // TpyeDefine
 #include "TypeDefine.h"
 
 // Device
 #include "Framwork/Device/Device.h"
+
+
 
 // Render
 
@@ -88,11 +97,13 @@ using namespace Microsoft::WRL;
 #include "Framwork/Collider/Collider.h"
 #include "Framwork/Collider/CircleCollider.h"
 #include "Framwork/Collider/RectCollider.h"
+#include "Obejct/HealthBar/HealthBar.h"
 
 // Utillity
 #include "Framwork/Utillity/KeyBoard.h"
 #include "Framwork/Utillity/Timer.h"
 #include "Framwork/Utillity/Utillity.h"
+#include "Framwork/Utillity/DXWrite.h"
 
 // Action
 #include "Framwork/Action/Action.h"
@@ -114,6 +125,8 @@ using namespace Microsoft::WRL;
 #include "Obejct/Character/Character.h"
 #include "Obejct/Ironclad/Ironclad.h"
 #include "Obejct/Monster/GremlinNob.h"
+
+#include "Obejct/Map/Map1.h"
 
 #include "Obejct/Card/AllCard.h"
 

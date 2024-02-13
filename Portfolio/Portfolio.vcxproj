@@ -161,10 +161,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Obejct\Map\Map1.h" />
+    <ClInclude Include="Obejct\HealthBar\HealthBar.h" />
     <ClInclude Include="Obejct\Character\Character.h" />
     <ClInclude Include="Obejct\Monster\GremlinNob.h" />
     <ClInclude Include="Obejct\Card\AllCard.h" />
-    <ClInclude Include="Obejct\HealthBar\HealthBar.h" />
     <ClInclude Include="Obejct\Card\Card.h" />
     <ClInclude Include="Obejct\Ironclad\Ironclad.h" />
     <ClInclude Include="Obejct\BagicObject\Effect.h" />
@@ -212,10 +213,11 @@
     <ClInclude Include="Framwork\UsingCard\UsingCard.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Obejct\Map\Map1.cpp" />
+    <ClCompile Include="Obejct\HealthBar\HealthBar.cpp" />
     <ClCompile Include="Obejct\Character\Character.cpp" />
     <ClCompile Include="Obejct\Monster\GremlinNob.cpp" />
     <ClCompile Include="Obejct\Card\AllCard.cpp" />
-    <ClCompile Include="Obejct\HealthBar\HealthBar.cpp" />
     <ClCompile Include="Obejct\Card\Card.cpp" />
     <ClCompile Include="Obejct\Ironclad\Ironclad.cpp" />
     <ClCompile Include="Obejct\BagicObject\Effect.cpp" />
@@ -268,6 +270,7 @@
   <ItemGroup>
     <Image Include="Portfolio.ico" />
     <Image Include="Resource\background.jpg" />
+    <Image Include="Resource\backHp.png" />
     <Image Include="Resource\BlueExplosion.png" />
     <Image Include="Resource\Effect\BlueExplosion.png" />
     <Image Include="Resource\Effect\explosion.png" />
@@ -279,6 +282,7 @@
     <Image Include="Resource\Effect\skill_core_4x4.png" />
     <Image Include="Resource\Effect\smoke_4x4.png" />
     <Image Include="Resource\Effect\thunder_core_4x4.png" />
+    <Image Include="Resource\hp.png" />
     <Image Include="Resource\Ironclad\Attack\0.png" />
     <Image Include="Resource\Ironclad\Attack\1.png" />
     <Image Include="Resource\Ironclad\Attack\10.png" />
@@ -387,6 +391,8 @@
     <Image Include="Resource\Ironclad\Skill\Spot Weakness.png" />
     <Image Include="Resource\Ironclad\Skill\True Grit.png" />
     <Image Include="Resource\Ironclad\Skill\Warcry.png" />
+    <Image Include="Resource\map1-1.jpg" />
+    <Image Include="Resource\map1-2.png" />
     <Image Include="Resource\Monster\Gremlin Nob.png" />
     <Image Include="small.ico" />
   </ItemGroup>

@@ -24,10 +24,13 @@ public:
 	int GetWeaken() { return _weaken; }
 	int GetVulnerable() { return _vulnerable; }
 
+	shared_ptr<HealthBar> HP() { return _hpBar; }
+
 protected:
 
 	shared_ptr<Quad> _character;
 	shared_ptr<Collider> _col;
+	shared_ptr<HealthBar> _hpBar;
 	int _hp = 80;
 	int _shield = 0;
 	int _force = 0;

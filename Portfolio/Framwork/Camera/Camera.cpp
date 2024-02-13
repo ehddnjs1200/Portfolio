@@ -34,7 +34,7 @@ void Camera::Update()
 void Camera::PostRender()
 {
 	ImGui::Text("CameraInfo");
-	ImGui::Text("CamX : %.1f, CamY : %.1f", _transform->GetPos().x, _transform->GetPos().y);
+	ImGui::Text("CamX : %.1f, CamY : %.1f", mousepos.x, _transform->GetPos().y);
 }
 
 void Camera::SetViewPort(UINT width, UINT height)

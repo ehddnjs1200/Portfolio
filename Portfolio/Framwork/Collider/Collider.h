@@ -43,7 +43,7 @@ protected:
 	vector<Vertex>				_vertices;
 	ColType _type = ColType::NONE;
 
-private:
+protected:
 
 	shared_ptr<VertexShader>	_vertexShader;
 	shared_ptr<PixelShader>		_pixelShader;

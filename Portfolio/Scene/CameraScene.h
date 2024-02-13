@@ -33,6 +33,7 @@ private:
 	vector<shared_ptr<Card>> _deck2;
 	vector<shared_ptr<Card>> _hand;
 	vector<shared_ptr<Card>> _discarded;
+	shared_ptr<Map1> _backgrund;
 
 	int a = 0;
 	int hand2;

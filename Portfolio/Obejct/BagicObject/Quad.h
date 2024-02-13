@@ -4,7 +4,7 @@ class Quad
 public:
 	Quad() {}
 	Quad(wstring file, wstring ps = L"WVPPixelShader");
-
+	Quad(wstring file, float size , wstring ps = L"WVPPixelShader");
 	virtual ~Quad();
 
 	virtual void Update();
@@ -36,5 +36,7 @@ protected:
 	shared_ptr<Transform> _transform;
 	shared_ptr<SRV> _texture;
 
+	Vector2 halfsize;
+	float _size = 0;
 };
 

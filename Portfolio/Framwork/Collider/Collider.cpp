@@ -28,8 +28,6 @@ void Collider::Render()
 	_pixelShader->Set();
 
 	DEVICE_CONTEXT->Draw(_vertices.size(), 0);
-	//DEVICE_CONTEXT->DrawInstanced(_vertices.size(),5,0,0);
-	//DEVICE_CONTEXT->DrawAuto();
 }
 
 bool Collider::IsCollision(shared_ptr<Collider> collider, bool isObb)
