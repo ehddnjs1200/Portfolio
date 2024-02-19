@@ -1,7 +1,8 @@
 #include "framework.h"
 #include "GremlinNob.h"
 
-GremlinNob::GremlinNob()
+GremlinNob::GremlinNob(int maxHp)
+	:_maxHp(maxHp)
 {
 	Init();
 	Setting();
@@ -21,12 +22,14 @@ void GremlinNob::Update()
 	if (GetWeaken() > 0)
 		SetWeaken(GetWeaken() - 1);
 
+	_hpBar->Update();
 }
 
 void GremlinNob::Render()
 {
 	_character->Render();
-	_col->Render();
+	//_col->Render();
+	_hpBar->Render();
 }
 
 void GremlinNob::Init()
@@ -38,8 +41,11 @@ void GremlinNob::Init()
 
 void GremlinNob::Setting()
 {
-	SetHp(86);
-	SetPos(Vector2(CenterX + 240, CenterY + 40), 0.8f);
+	SetPos(Vector2(CenterX + 310, CenterY-10), 0.8f);
+
+	_hp = _maxHp;
+	_hpBar = make_shared<HealthBar>(Vector2(CenterX + 310, CenterY - 180),_maxHp, _hp, 30);
+
 }
 
 void GremlinNob::GetInfuriating()
@@ -49,26 +55,40 @@ void GremlinNob::GetInfuriating()
 
 void GremlinNob::SkullStrike(shared_ptr<Character> enemy)
 {
+	int damage;
 	if (enemy->GetVulnerable() > 0 && this->GetWeaken() > 0)
-		enemy->SetHp(enemy->GetHp() - (((6 + this->GetForce()) * 1.5f) * 0.75));
+		damage = (((6 + this->GetForce()) * 1.5f) * 0.75);
 	else if (enemy->GetVulnerable() > 0)
-		enemy->SetHp(enemy->GetHp() - ((6 + this->GetForce()) * 1.5f));
+		damage = ((6 + this->GetForce()) * 1.5f);
 	else if (this->GetWeaken() > 0)
-		enemy->SetHp(enemy->GetHp() - ((6 + this->GetForce()) * 0.75));
+		damage = ((6 + this->GetForce()) * 0.75);
 	else
-		enemy->SetHp(enemy->GetHp() - (6 + this->GetForce()));
+		damage =(6 + this->GetForce());
 
+	enemy->GetDemage(damage);
 	enemy->SetVulnerable(2);
 }
 
 void GremlinNob::Strike(shared_ptr<Character> enemy)
 {
+	int damage;
 	if (enemy->GetVulnerable() > 0 && this->GetWeaken() > 0)
-		enemy->SetHp(enemy->GetHp() - (((6 + this->GetForce()) * 1.5f) * 0.75));
+		damage = (((6 + this->GetForce()) * 1.5f) * 0.75);
 	else if (enemy->GetVulnerable() > 0)
-		enemy->SetHp(enemy->GetHp() - ((6 + this->GetForce()) * 1.5f));
+		damage = ((6 + this->GetForce()) * 1.5f);
 	else if (this->GetWeaken() > 0)
-		enemy->SetHp(enemy->GetHp() - ((6 + this->GetForce()) * 0.75));
+		damage = ((6 + this->GetForce()) * 0.75);
 	else
-		enemy->SetHp(enemy->GetHp() - (6 + this->GetForce()));
+		damage = (6 + this->GetForce());
+
+	enemy->GetDemage(damage);
+}
+
+void GremlinNob::Attack(int pattern, shared_ptr<Character> enemy)
+{
+	if (pattern == 1)
+		SkullStrike(enemy);
+	if (pattern == 2)
+		Strike(enemy);
+
 }

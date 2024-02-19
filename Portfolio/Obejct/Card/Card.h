@@ -22,7 +22,7 @@ public:
 		Rare
 	};
 	Card() {};
-	Card(wstring file, Card::Type type, Card::Rarity rarity, string name, int cost, int maxUpgrade, int upgrade, bool volatility = false, bool extinction = false);
+	Card(wstring file, Card::Type type, Card::Rarity rarity, string name, int cost, int maxUpgrade, int upgrade, int combo = 1, int multi = 1, bool volatility = false, bool extinction = false);
 	Card(const Card& other);
 	~Card();
 
@@ -30,6 +30,8 @@ public:
 	void Render();
 
 	void SetPosition(Vector2 pos);
+
+	void SetChoice();
 
 	void Cellact();
 
@@ -52,10 +54,14 @@ public:
 	Rarity GetRarity() { return _rarity; }
 	string GetName() { return _name; }
 	int GetCost() { return _cost; }
+	int GetCombo() { return _combo; }
+	int GetMulti() { return _multi; }
 	int GetMaxUg() { return _maxUpgrade; }
 	int GetUg() { return _upgrade; }
 	bool GetVolatility() { return _volatility; }
 	bool GetExtinction()  { return _extinction; }
+	bool GetChoice() { return  _choice; }
+
 private:
 
 	shared_ptr<Quad> _card;
@@ -70,6 +76,8 @@ private:
 	int _cost = 0;
 	int _maxUpgrade = 1;
 	int _upgrade = 0;
+	int _combo = 0;
+	int _multi = 0;
 	bool _volatility = false;
 	bool _extinction = false;
 

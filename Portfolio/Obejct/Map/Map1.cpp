@@ -26,7 +26,7 @@ void Map1::Render()
 void Map1::Init()
 {
 	backgrund1 = make_shared<Quad>(L"map1-1.jpg");
-	//backgrund2 = make_shared<Quad>(L"map1-2.png");
+	//backgrund2 = make_shared<Quad>(L"map1-2-2.png");
 }
 
 void Map1::Setting()
@@ -35,5 +35,5 @@ void Map1::Setting()
 	//backgrund2->GetTransForm()->SetPos(Vector2(CenterX, CenterY));
 
 	backgrund1->GetTransForm()->GetScale() *= 0.35f;
-	//backgrund2->GetTransForm()->GetScale() *= 0.35f;
+	//backgrund2->GetTransForm()->GetScale() *= 1.0f;
 }

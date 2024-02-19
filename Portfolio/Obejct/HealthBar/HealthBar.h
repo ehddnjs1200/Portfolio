@@ -4,7 +4,7 @@ class Quad;
 class HealthBar
 {
 public:
-    HealthBar(int maxHp, int Hp,int barWidth);
+    HealthBar(Vector2 pos,int maxHp, int Hp,int barWidth);
     ~HealthBar();
 
     void Update();
@@ -22,6 +22,7 @@ private:
     int _maxHp;
     int _Hp;
     int _barWidth;
+    Vector2 _pos;
 
     vector<shared_ptr<Quad>> _Image;
     shared_ptr<Quad> _back;

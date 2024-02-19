@@ -17,6 +17,8 @@ public:
 	void SetWeaken(int value) { _weaken = value; }
 	void SetVulnerable(int value) { _vulnerable = value; }
 
+	shared_ptr<Collider> GetCollider() { return _col; }
+
 	int GetHp() { return _hp; }
 	int GetShield() { return _shield; }
 	int GetForce() { return _force; }
@@ -25,6 +27,9 @@ public:
 	int GetVulnerable() { return _vulnerable; }
 
 	shared_ptr<HealthBar> HP() { return _hpBar; }
+
+	void GetDemage(int demage);
+	void Heling(int value);
 
 protected:
 

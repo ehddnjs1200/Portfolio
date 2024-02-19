@@ -1,8 +1,8 @@
 #include "framework.h"
 #include "Card.h"
 
-Card::Card(wstring file, Card::Type type, Card::Rarity rarity, string name, int cost, int maxUpgrade, int upgrade, bool volatility, bool extinction)
-	:_file(file), _type(type), _rarity(rarity), _name(name), _cost(cost), _maxUpgrade(maxUpgrade), _upgrade(upgrade), _volatility(volatility),_extinction(extinction)
+Card::Card(wstring file, Card::Type type, Card::Rarity rarity, string name, int cost, int maxUpgrade, int upgrade,int combo,int multi, bool volatility, bool extinction)
+	:_file(file), _type(type), _rarity(rarity), _name(name), _cost(cost), _maxUpgrade(maxUpgrade), _upgrade(upgrade),_combo(combo),_multi(multi), _volatility(volatility),_extinction(extinction)
 {
 	_card = make_shared<Quad>(_file);
 	_card->GetTransForm()->GetScale() *= 0.3f;
@@ -14,8 +14,8 @@ Card::Card(wstring file, Card::Type type, Card::Rarity rarity, string name, int 
 Card::Card(const Card& other)
 	: _file(other._file),_type(other._type), _rarity(other._rarity),
 	_name(other._name), _cost(other._cost),
-	_maxUpgrade(other._maxUpgrade), _upgrade(other._upgrade)
-	, _volatility(other._volatility),_extinction(other._extinction)
+	_maxUpgrade(other._maxUpgrade), _upgrade(other._upgrade),
+	_combo(other._combo), _multi(other._multi), _volatility(other._volatility),_extinction(other._extinction)
 {
 	_card = make_shared<Quad>(other._file);
 	_card->GetTransForm()->GetScale() = other._card->GetTransForm()->GetScale();
@@ -44,6 +44,15 @@ void Card::Render()
 void Card::SetPosition(Vector2 pos)
 {
 	_card->GetTransForm()->GetPos() = pos;
+}
+
+void Card::SetChoice()
+{
+	if (_choice)
+	{
+		_card->GetTransForm()->GetPos().y -= 30.0f;
+		_choice = false;
+	}
 }
 
 void Card::Cellact()
@@ -133,28 +142,28 @@ map<string, shared_ptr<Card>> Card::SetIKA(map<string, shared_ptr<Card>>_allCard
 	_allCard.emplace("IKA2", make_shared<Card>(file[2], Card::Attack, Card::Common, "Anger", 0, 1, 0));
 	_allCard.emplace("IKA3", make_shared<Card>(file[3], Card::Attack, Card::Common, "Body Slam", 1, 1, 0));
 	_allCard.emplace("IKA4", make_shared<Card>(file[4], Card::Attack, Card::Common, "Clash", 0, 1, 0));
-	_allCard.emplace("IKA5", make_shared<Card>(file[5], Card::Attack, Card::Common, "Cleave", 1, 1, 0));
+	_allCard.emplace("IKA5", make_shared<Card>(file[5], Card::Attack, Card::Common, "Cleave", 1, 1, 0,1,9));
 	_allCard.emplace("IKA6", make_shared<Card>(file[6], Card::Attack, Card::Common, "Clothesline", 2, 1, 0));
 	_allCard.emplace("IKA7", make_shared<Card>(file[7], Card::Attack, Card::Common, "Headbutt", 1, 1, 0));
 	_allCard.emplace("IKA8", make_shared<Card>(file[8], Card::Attack, Card::Common, "Heavy Blade", 2, 1, 0));
 	_allCard.emplace("IKA9", make_shared<Card>(file[9], Card::Attack, Card::Common, "Iron Wave", 1, 1, 0));
 	_allCard.emplace("IKA10", make_shared<Card>(file[10], Card::Attack, Card::Common, "Perfected Strike", 2, 1, 0));
 	_allCard.emplace("IKA11", make_shared<Card>(file[11], Card::Attack, Card::Common, "Pommel Strike", 1, 1, 0));
-	_allCard.emplace("IKA12", make_shared<Card>(file[12], Card::Attack, Card::Common, "Sword Boomerang", 1, 1, 0));
-	_allCard.emplace("IKA13", make_shared<Card>(file[13], Card::Attack, Card::Common, "Thunderclap", 1, 1, 0));
-	_allCard.emplace("IKA14", make_shared<Card>(file[14], Card::Attack, Card::Common, "Twin Strike", 1, 1, 0));
+	_allCard.emplace("IKA12", make_shared<Card>(file[12], Card::Attack, Card::Common, "Sword Boomerang", 1, 1, 0,3,0));
+	_allCard.emplace("IKA13", make_shared<Card>(file[13], Card::Attack, Card::Common, "Thunderclap", 1, 1, 0,1,9));
+	_allCard.emplace("IKA14", make_shared<Card>(file[14], Card::Attack, Card::Common, "Twin Strike", 1, 1, 0,2));
 	_allCard.emplace("IKA15", make_shared<Card>(file[15], Card::Attack, Card::Common, "Wild Strike", 1, 1, 0));
 
 	_allCard.emplace("IKA16", make_shared<Card>(file[16], Card::Attack, Card::Special, "Blood for Blood", 4, 1, 0));
-	_allCard.emplace("IKA17", make_shared<Card>(file[17], Card::Attack, Card::Special, "Carnage", 2, 1, 0, true));
+	_allCard.emplace("IKA17", make_shared<Card>(file[17], Card::Attack, Card::Special, "Carnage", 2, 1, 0,1,1, true));
 	_allCard.emplace("IKA18", make_shared<Card>(file[18], Card::Attack, Card::Special, "Dropkick", 1, 1, 0));
 	_allCard.emplace("IKA19", make_shared<Card>(file[19], Card::Attack, Card::Special, "Hemokinesis", 1, 1, 0));
-	_allCard.emplace("IKA20", make_shared<Card>(file[20], Card::Attack, Card::Special, "Pummel", 1, 1, 0, false, true));
+	_allCard.emplace("IKA20", make_shared<Card>(file[20], Card::Attack, Card::Special, "Pummel", 1, 1, 0,4,1, false, true));
 	_allCard.emplace("IKA21", make_shared<Card>(file[21], Card::Attack, Card::Special, "Rampage", 1, 1, 0));
 	_allCard.emplace("IKA22", make_shared<Card>(file[22], Card::Attack, Card::Special, "Searing Blow", 2, 1, 0));
 	_allCard.emplace("IKA23", make_shared<Card>(file[23], Card::Attack, Card::Special, "Sever Sou", 2, 1, 0));
 	_allCard.emplace("IKA24", make_shared<Card>(file[24], Card::Attack, Card::Special, "Uppercut", 1, 1, 0));
-	_allCard.emplace("IKA25", make_shared<Card>(file[25], Card::Attack, Card::Special, "Whirlwind", 6, 1, 0));
+	_allCard.emplace("IKA25", make_shared<Card>(file[25], Card::Attack, Card::Special, "Whirlwind", 6, 1, 0,1,9));
 	_allCard.emplace("IKA26", make_shared<Card>(file[26], Card::Attack, Card::Special, "Reckless Charge", 0, 1, 0));
 
 	_allCard.emplace("IKA27", make_shared<Card>(file[27], Card::Attack, Card::Rare, "Bludgeon", 3, 1, 0));

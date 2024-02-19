@@ -23,11 +23,15 @@ public:
 		return true;
 	}
 
+	void TurnStrat();
+	
+	void TurnEnd();
+
 	void Drow();
 
 private:
 	shared_ptr<Ironclad> _ironclad;
-	shared_ptr<GremlinNob> _gremlinNob;
+	vector<shared_ptr<GremlinNob>> _monsters;
 	map<string, shared_ptr<Card>>_allCard;
 	vector<shared_ptr<Card>> _deck;
 	vector<shared_ptr<Card>> _deck2;

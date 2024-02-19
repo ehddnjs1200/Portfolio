@@ -1,8 +1,8 @@
 #include "framework.h"
 #include "HealthBar.h"
 
-HealthBar::HealthBar(int maxHp, int Hp,int barWidth)
-    :_maxHp(maxHp), _Hp(Hp), _barWidth(barWidth)
+HealthBar::HealthBar(Vector2 pos, int maxHp, int Hp,int barWidth)
+    :_pos(pos),_maxHp(maxHp), _Hp(Hp), _barWidth(barWidth)
 {
     Init();
     Setting();
@@ -104,7 +104,7 @@ void HealthBar::Init()
 
 void HealthBar::Setting()
 {
-    _back->GetTransForm()->SetPos(Vector2(CenterX - 240, CenterY - 100));
+    _back->GetTransForm()->SetPos(_pos);
     _back->GetTransForm()->GetScale() *= 0.09f;
     _HpBar->SetParent(_back->GetTransForm());
 
@@ -120,7 +120,7 @@ void HealthBar::Setting()
 
     for (int i = 0; i < _maxHp; i++)
     {
-        _Image[i]->GetTransForm()->SetPos(Vector2(left_x + (_Interval * i), CenterY - 100));
+        _Image[i]->GetTransForm()->SetPos(Vector2(left_x + (_Interval * i), _pos.y));
         _Image[i]->GetTransForm()->GetScale() *= 0.09f;
     }
 }

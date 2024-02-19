@@ -32,7 +32,8 @@ void Ironclad::Init()
 
 void Ironclad::Setting()
 {
-	SetPos(Vector2(CenterX - 240, CenterY - 10), 0.8f);
+	SetPos(Vector2(CenterX - 250, CenterY - 80), 0.8f);
+	_maxCost = _cost;
 	_hp = _maxHp;
-	_hpBar = make_shared<HealthBar>(_maxHp, _hp,30);
+	_hpBar = make_shared<HealthBar>(Vector2(CenterX - 250, CenterY - 180),_maxHp, _hp,30);
 }

@@ -131,6 +131,7 @@ using namespace Microsoft::WRL;
 #include "Obejct/Card/AllCard.h"
 
 #include "Framwork/UsingCard/UsingCard.h"
+#include "Framwork/Bettle/Bettle.h"
 
 // Scene
 #include "Scene/Scene.h"

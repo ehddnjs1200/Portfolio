@@ -20,67 +20,24 @@ void CameraScene::Update()
 {
 	_backgrund->Update();
 	_ironclad->Update();
-	_gremlinNob->Update();
-
-	if (KeyDown('W'))
-	{
-		_ironclad->SetMaxHp(20);
-		_ironclad->HP()->PlusMaxHp(20);
-	}
+	for (int i = 0; i < _monsters.size(); i++)
+		_monsters[i]->Update();
 
 	if (KeyDown('Q'))
 	{
-		_ironclad->HP()->DecreaseHp(30);
-		ShuffleDeck();
-		Drow();
+		TurnStrat();
 	}
-		for (int i = 0; i < _hand.size(); i++)
+	
+
+	for (int i = 0; i < _hand.size(); i++)
 	{
 		_hand[i]->Update();
 	}
 
 	if (!_hand.empty())
 	{
-		a = _hand.size();
-		for (int i = _hand.size() - 1; i > -1; i--)
-		{
-			if (_hand[i]->GetCollider()->IsCollision(mousepos))
-			{
-				if (a == _hand.size())
-				{
-					a = i;
-					_hand[a]->GetCollider()->SetRed();
-					_hand[a]->Cellact();
-				}
-				else
-				{
-					if (a < i)
-					{
-						_hand[i]->GetCollider()->SetRed();
-						_hand[i]->Cellact();
-						_hand[a]->GetCollider()->SetGreen();
-						_hand[a]->UnCelled();
-						a = i;
-					}
-					else
-					{
-						_hand[i]->GetCollider()->SetGreen();
-						_hand[i]->UnCelled();
-					}	
-				}
-				if (KeyDown(VK_LBUTTON))
-					hand2 = a;
-			}
-			else
-			{
-				if (hand2 != i)
-				{
-					_hand[i]->GetCollider()->SetGreen();
-					_hand[i]->UnCelled();
-				}
-			}
-		}
-		
+		hand2 = SelectCard(_hand, hand2);
+
 		if (hand2 < _hand.size())
 		{
 			if (KeyDown(VK_LBUTTON))
@@ -89,7 +46,18 @@ void CameraScene::Update()
 			}
 			if (KeyUp(VK_LBUTTON))
 			{
-				_hand[hand2]->UnCelled();
+				if (_monsters[0]->GetCollider()->IsCollision(mousepos))
+				{
+					PlayerAttack(_hand[hand2], _ironclad, _monsters[0]);
+					if (_hand[hand2]->GetChoice())
+					{
+						_discarded.emplace_back(make_shared<Card>(*_hand[hand2]));
+						_hand.erase(_hand.begin() + hand2);
+					}
+				}
+				else
+					_hand[hand2]->UnCelled();
+
 				hand2 = _hand.size();
 			}
 		}
@@ -97,24 +65,16 @@ void CameraScene::Update()
 
 	if (KeyDown('E'))
 	{
-		_ironclad->HP()->IncreaseHp(30);
-		if (_hand.size() != 0)
-		{
-			for (int i = 0; i < _hand.size(); i++)
-			{
-				_discarded.emplace_back(make_shared<Card>(*_hand[i]));
-			}
-			_hand.erase(_hand.begin(), _hand.begin() + _hand.size());
-		}
+		TurnEnd();
 	}
-
 }
 
 void CameraScene::Render()
 {
 	_backgrund->Render();
 	_ironclad->Render();
-	_gremlinNob->Render();
+	for (int i = 0; i < _monsters.size(); i++)
+		_monsters[i]->Render();
 
 
 	for (int i = 0; i < _hand.size(); i++)
@@ -122,6 +82,14 @@ void CameraScene::Render()
 		_hand[i]->Render();
 	}
 
+	if (_monsters[0]->GetHp() <= 0)
+	{
+		ImGui::Text("Player Win");
+	}
+	if (_ironclad->GetHp() <= 0)
+	{
+		ImGui::Text("Player lose");
+	}
 }
 
 void CameraScene::PostRender()
@@ -131,7 +99,7 @@ void CameraScene::PostRender()
 void CameraScene::Init()
 {
 	_ironclad = make_shared<Ironclad>(3,180,5);
-	_gremlinNob = make_shared<GremlinNob>();
+	_monsters.emplace_back(make_shared<GremlinNob>(86));
 	_backgrund = make_shared<Map1>();
 }
 
@@ -167,6 +135,28 @@ void CameraScene::ShuffleDeck()
 }
 
 
+
+void CameraScene::TurnStrat()
+{
+	ShuffleDeck();
+	_ironclad->SetCost();
+	Drow();
+}
+
+void CameraScene::TurnEnd()
+{
+	if (_hand.size() != 0)
+	{
+		for (int i = 0; i < _hand.size(); i++)
+		{
+			_discarded.emplace_back(make_shared<Card>(*_hand[i]));
+		}
+		_hand.erase(_hand.begin(), _hand.begin() + _hand.size());
+	}
+
+	MonsterTurn(_ironclad, _monsters[0]);
+
+}
 
 void CameraScene::Drow()
 {
@@ -204,7 +194,31 @@ void CameraScene::Drow()
 	}
 	_deck2.erase(_deck2.begin(), _deck2.begin() + (draw - b));
 
+
 	for (int i = 0; i < _hand.size(); i++)
-		_hand[i]->SetPosition(Vector2(300.0f + (i * 80), 0.0f));
+	{
+		int half = _hand.size() / 2;
+		if (_hand.size() % 2 != 0)
+		{
+			if (i == half)
+				_hand[i]->SetPosition(Vector2(CenterX, 0.0f));
+			else if (i < half)
+				_hand[i]->SetPosition(Vector2(CenterX - ((half - i) * 80), 0.0f));
+			else
+				_hand[i]->SetPosition(Vector2(CenterX + ((i - half) * 80), 0.0f));
+		}
+
+		if (_hand.size() % 2 == 0)
+		{
+			if (i == half - 1)
+				_hand[i]->SetPosition(Vector2(CenterX - 40, 0.0f));
+			else if (i == half)
+				_hand[i]->SetPosition(Vector2(CenterX + 40, 0.0f));
+			else if (i < half)
+				_hand[i]->SetPosition(Vector2(CenterX - ((half - i) * 80) + 40, 0.0f));
+			else
+				_hand[i]->SetPosition(Vector2(CenterX + ((i - half + 1) * 80) - 40, 0.0f));
+		}
+	}
 
 }
