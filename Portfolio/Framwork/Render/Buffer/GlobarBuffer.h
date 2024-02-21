@@ -108,3 +108,21 @@ public:
 		: ConstantBuffer(&_data, sizeof(_data))
 	{}
 };
+
+class ButtonBuffer : public ConstantBuffer
+{
+public:
+	struct Data
+	{
+		int state = 0;
+		float hovered = 0.0f;
+		float clicked = 0.0f;
+		float padding = 0.0f;
+	} data;
+
+	ButtonBuffer()
+		: ConstantBuffer(&data, sizeof(Data))
+	{
+	}
+
+};

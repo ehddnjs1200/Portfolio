@@ -8,15 +8,6 @@ public:
 	void Update();
 	void Render();
 
-	//SRV GetImageInfoAtMousePosition() const {
-	//	SRV imageInfo;
-	//	
-
-	//	return imageInfo;
-	//}
-
 private:
-	shared_ptr<Scene> _scene;
-
 };
 

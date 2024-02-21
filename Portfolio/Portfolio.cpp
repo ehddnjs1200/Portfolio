@@ -93,11 +93,12 @@ void ICreate()
     KeyBoard::Create();
     Timer::Create();
     Camera::Create();
-    //DXWrite::Create();
 
     StateManager::Create();
     TextureManager::Create();
     EffectManager::Create();
+    ShaderManager::Create();
+    SceneManager::Create();
 }
 
 void IDelete()
@@ -105,11 +106,12 @@ void IDelete()
     KeyBoard::Delete();
     Timer::Delete();
     Camera::Delete();
-    //DXWrite::Delete();
 
     StateManager::Delete();
     TextureManager::Delete();
     EffectManager::Delete();
+    ShaderManager::Delete();
+    SceneManager::Delete();
 
     Device::Delete();
 }

@@ -9,6 +9,7 @@ CameraScene::CameraScene()
 	for (int i = 0; i < _deck.size(); i++)
 		_deck2.emplace_back(make_shared<Card>(*_deck[i]));
 
+	TurnStrat();
 }
 
 CameraScene::~CameraScene()
@@ -20,19 +21,10 @@ void CameraScene::Update()
 {
 	_backgrund->Update();
 	_ironclad->Update();
+	_NextTurn->Update();
+
 	for (int i = 0; i < _monsters.size(); i++)
 		_monsters[i]->Update();
-
-	if (KeyDown('Q'))
-	{
-		TurnStrat();
-	}
-	
-
-	for (int i = 0; i < _hand.size(); i++)
-	{
-		_hand[i]->Update();
-	}
 
 	if (!_hand.empty())
 	{
@@ -63,6 +55,20 @@ void CameraScene::Update()
 		}
 	}
 
+	if (!AllDead(_monsters[0]))
+	{
+		scene = 1;
+		NextScene();
+	}
+	
+
+	for (int i = 0; i < _hand.size(); i++)
+	{
+		_hand[i]->Update();
+	}
+
+	
+
 	if (KeyDown('E'))
 	{
 		TurnEnd();
@@ -81,19 +87,11 @@ void CameraScene::Render()
 	{
 		_hand[i]->Render();
 	}
-
-	if (_monsters[0]->GetHp() <= 0)
-	{
-		ImGui::Text("Player Win");
-	}
-	if (_ironclad->GetHp() <= 0)
-	{
-		ImGui::Text("Player lose");
-	}
 }
 
 void CameraScene::PostRender()
 {
+	_NextTurn->PostRender();
 }
 
 void CameraScene::Init()
@@ -101,6 +99,8 @@ void CameraScene::Init()
 	_ironclad = make_shared<Ironclad>(3,180,5);
 	_monsters.emplace_back(make_shared<GremlinNob>(86));
 	_backgrund = make_shared<Map1>();
+
+	_NextTurn = make_shared<Button>(L"buttonL.png");
 }
 
 
@@ -125,6 +125,12 @@ void CameraScene::Setting()
 		_deck.emplace_back(make_shared<Card>(*cardIKA0));
 		_deck.emplace_back(make_shared<Card>(*cardIKA0));
 	}
+
+	_NextTurn->SetPosition(Vector2(CenterX + 400, CenterY - 230));
+	_NextTurn->SetScale(Vector2(0.3f, 0.3f));
+
+	_NextTurn->SetEvent(bind(&CameraScene::TurnEnd, this));
+
 }
 
 void CameraScene::ShuffleDeck()
@@ -141,6 +147,7 @@ void CameraScene::TurnStrat()
 	ShuffleDeck();
 	_ironclad->SetCost();
 	Drow();
+
 }
 
 void CameraScene::TurnEnd()
@@ -154,8 +161,15 @@ void CameraScene::TurnEnd()
 		_hand.erase(_hand.begin(), _hand.begin() + _hand.size());
 	}
 
+
 	MonsterTurn(_ironclad, _monsters[0]);
 
+	if (!AllDead(_ironclad))
+	{
+		scene = 2;
+		NextScene();
+	}
+	TurnStrat();
 }
 
 void CameraScene::Drow()
@@ -221,4 +235,10 @@ void CameraScene::Drow()
 		}
 	}
 
+}
+
+void CameraScene::NextScene()
+{
+	int a = 5;
+	SceneManager::GetInstace()->SetScene("End");
 }

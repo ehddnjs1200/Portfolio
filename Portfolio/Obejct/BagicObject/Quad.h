@@ -3,7 +3,7 @@ class Quad
 {
 public:
 	Quad() {}
-	Quad(wstring file, wstring ps = L"WVPPixelShader");
+	Quad(wstring file, wstring vs = L"WVPVertexShader", wstring ps = L"WVPPixelShader");
 	Quad(wstring file, float size , wstring ps = L"WVPPixelShader");
 	virtual ~Quad();
 

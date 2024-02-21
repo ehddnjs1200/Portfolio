@@ -161,6 +161,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Obejct\UI\Button.h" />
+    <ClInclude Include="Scene\EndScene.h" />
     <ClInclude Include="Framwork\Bettle\Bettle.h" />
     <ClInclude Include="Obejct\Map\Map1.h" />
     <ClInclude Include="Obejct\HealthBar\HealthBar.h" />
@@ -172,6 +174,7 @@
     <ClInclude Include="Obejct\BagicObject\Effect.h" />
     <ClInclude Include="Obejct\BagicObject\EffectManager.h" />
     <ClInclude Include="Framwork\Camera\Camera.h" />
+    <ClInclude Include="Scene\SceneManager.h" />
     <ClInclude Include="Scene\CameraScene.h" />
     <ClInclude Include="Scene\FilterScene.h" />
     <ClInclude Include="Framwork\Action\Action.h" />
@@ -202,6 +205,9 @@
     <ClInclude Include="Scene\Scene.h" />
     <ClInclude Include="Framwork\State\StateManager.h" />
     <ClInclude Include="Obejct\BagicObject\Sprite.h" />
+    <ClInclude Include="Scene\StartScene.h" />
+    <ClInclude Include="Framwork\Render\Shader\Shader.h" />
+    <ClInclude Include="Framwork\Render\Shader\ShaderManager.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Framwork\Utillity\Timer.h" />
     <ClInclude Include="Framwork\Render\Texture\TextureManager.h" />
@@ -214,6 +220,8 @@
     <ClInclude Include="Framwork\UsingCard\UsingCard.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Obejct\UI\Button.cpp" />
+    <ClCompile Include="Scene\EndScene.cpp" />
     <ClCompile Include="Framwork\Bettle\Bettle.cpp" />
     <ClCompile Include="Obejct\Map\Map1.cpp" />
     <ClCompile Include="Obejct\HealthBar\HealthBar.cpp" />
@@ -225,6 +233,7 @@
     <ClCompile Include="Obejct\BagicObject\Effect.cpp" />
     <ClCompile Include="Obejct\BagicObject\EffectManager.cpp" />
     <ClCompile Include="Framwork\Camera\Camera.cpp" />
+    <ClCompile Include="Scene\SceneManager.cpp" />
     <ClCompile Include="Scene\CameraScene.cpp" />
     <ClCompile Include="Scene\FilterScene.cpp" />
     <ClCompile Include="Framwork\Action\Action.cpp" />
@@ -265,6 +274,9 @@
     <ClCompile Include="Obejct\BagicObject\Sprite.cpp" />
     <ClCompile Include="Framwork\Utillity\Utillity.cpp" />
     <ClCompile Include="Framwork\UsingCard\UsingCard.cpp" />
+    <ClCompile Include="Scene\StartScene.cpp" />
+    <ClCompile Include="Framwork\Render\Shader\Shader.cpp" />
+    <ClCompile Include="Framwork\Render\Shader\ShaderManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Portfolio.rc" />
@@ -273,7 +285,10 @@
     <Image Include="Portfolio.ico" />
     <Image Include="Resource\background.jpg" />
     <Image Include="Resource\backHp.png" />
+    <Image Include="Resource\Black.png" />
     <Image Include="Resource\BlueExplosion.png" />
+    <Image Include="Resource\buttonL.png" />
+    <Image Include="Resource\DieB.png" />
     <Image Include="Resource\Effect\BlueExplosion.png" />
     <Image Include="Resource\Effect\explosion.png" />
     <Image Include="Resource\Effect\fire_8x2.png" />
@@ -284,6 +299,7 @@
     <Image Include="Resource\Effect\skill_core_4x4.png" />
     <Image Include="Resource\Effect\smoke_4x4.png" />
     <Image Include="Resource\Effect\thunder_core_4x4.png" />
+    <Image Include="Resource\EndB.png" />
     <Image Include="Resource\hp.png" />
     <Image Include="Resource\Ironclad\Attack\0.png" />
     <Image Include="Resource\Ironclad\Attack\1.png" />
@@ -349,6 +365,7 @@
     <Image Include="Resource\Ironclad\Attack\Uppercut.png" />
     <Image Include="Resource\Ironclad\Attack\Whirlwind.png" />
     <Image Include="Resource\Ironclad\Attack\Wild Strike.png" />
+    <Image Include="Resource\Ironclad\corpse.png" />
     <Image Include="Resource\Ironclad\Ironclad.png" />
     <Image Include="Resource\Ironclad\Power\Barricade.png" />
     <Image Include="Resource\Ironclad\Power\Berserk.png" />
@@ -397,9 +414,20 @@
     <Image Include="Resource\map1-2-2.png" />
     <Image Include="Resource\map1-2.png" />
     <Image Include="Resource\Monster\Gremlin Nob.png" />
+    <Image Include="Resource\StartB.png" />
     <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
+    <FxCompile Include="Shaders\ButtonPS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
     <FxCompile Include="Shaders\Collider\ColliderPixelShader.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>

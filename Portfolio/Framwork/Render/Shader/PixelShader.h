@@ -1,15 +1,14 @@
 #pragma once
-class PixelShader
+class PixelShader : public Shader
 {
 public:
 	PixelShader(wstring file);
-	~PixelShader();
+	virtual ~PixelShader();
 
-	void CreateShader(wstring file);
-	void Set();
+	virtual void CreateShader(wstring file) override;
+	virtual void Set() override;
 
 private:
 	ComPtr<ID3D11PixelShader> _shader;
-	ComPtr<ID3DBlob> _blob;
 };
 

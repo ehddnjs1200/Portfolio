@@ -1,12 +1,10 @@
 #include "framework.h"
 #include "Program.h"
 
-#include "Scene/CameraScene.h"
 
 Program::Program()
 {
 	srand(static_cast<unsigned int>(time(nullptr)));
-	_scene = make_shared<CameraScene>();
 }
 
 Program::~Program()
@@ -20,7 +18,7 @@ void Program::Update()
 	Camera::GetInstance()->Update();
 	EffectManager::GetInstance()->Update();
 
-	_scene->Update();
+	SceneManager::GetInstace()->Update();
 }
 
 void Program::Render()
@@ -33,14 +31,14 @@ void Program::Render()
 
 	Cam->SetViewPort();
 	
-	_scene->Render();
+	SceneManager::GetInstace()->Render();
 	EffectManager::GetInstance()->Render();
 
 	Cam->SetViewBuffer();
 	Cam->SetProjectionBuffer();
 		
 	Cam->PostRender();
-	_scene->PostRender();
+	SceneManager::GetInstace()->PostRender();
 
 	ImGui::Text("FPS : %d", FPS);
 	ImGui::Render();

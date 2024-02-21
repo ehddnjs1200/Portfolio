@@ -153,6 +153,24 @@
     <ClInclude Include="Framwork\Bettle\Bettle.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Scene\SceneManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\StartScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\EndScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Obejct\UI\Button.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Render\Shader\Shader.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framwork\Render\Shader\ShaderManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Portfolio.cpp">
@@ -276,6 +294,24 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Framwork\Bettle\Bettle.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\StartScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\EndScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Obejct\UI\Button.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Render\Shader\Shader.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Render\Shader\ShaderManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -669,6 +705,24 @@
     <Image Include="Resource\map1-2-2.png">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="Resource\DieB.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\EndB.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Black.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\StartB.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\buttonL.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Ironclad\corpse.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Shaders\TutorialShader.hlsl" />
@@ -679,6 +733,7 @@
     <FxCompile Include="Shaders\Sprite\SpriteVS.hlsl" />
     <FxCompile Include="Shaders\Sprite\SpritePS.hlsl" />
     <FxCompile Include="Shaders\FIlterPS.hlsl" />
+    <FxCompile Include="Shaders\ButtonPS.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="imgui.ini" />

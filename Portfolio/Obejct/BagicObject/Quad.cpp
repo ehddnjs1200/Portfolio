@@ -1,10 +1,11 @@
 #include "framework.h"
 #include "Quad.h"
 
-Quad::Quad(wstring file, wstring ps)
+Quad::Quad(wstring file, wstring vs, wstring ps)
 {
     _texture = TextureAdd(file);
-    CreateShader(ps);
+    _vertexShader = ShaderManager::GetInstance()->AddVS(vs);
+    _pixelShader = ShaderManager::GetInstance()->AddPS(ps);
 	CreateBuffer();
 	
     _transform = make_shared<Transform>();

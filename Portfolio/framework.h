@@ -75,8 +75,10 @@ using namespace Microsoft::WRL;
 #include "Framwork/Render/Buffer/VertexBuffer.h"
 
 // Render - Shader
+#include "Framwork/Render/Shader/Shader.h"
 #include "Framwork/Render/Shader/VertexShader.h"
 #include "Framwork/Render/Shader/PixelShader.h"
+#include "Framwork/Render/Shader/ShaderManager.h"
 
 // Render - Texture
 #include "Framwork/Render/Texture/SRV.h"
@@ -122,6 +124,9 @@ using namespace Microsoft::WRL;
 
 #include "Obejct/Card/Card.h"
 
+// UI
+#include "Obejct/UI/Button.h"
+
 #include "Obejct/Character/Character.h"
 #include "Obejct/Ironclad/Ironclad.h"
 #include "Obejct/Monster/GremlinNob.h"
@@ -135,6 +140,7 @@ using namespace Microsoft::WRL;
 
 // Scene
 #include "Scene/Scene.h"
+#include "Scene/SceneManager.h"
 
 // Program
 #include "Program/Program.h"

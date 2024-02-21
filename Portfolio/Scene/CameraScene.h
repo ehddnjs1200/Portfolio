@@ -18,7 +18,7 @@ public:
 
 	bool AllDead(shared_ptr<Character> player)
 	{
-		if (player->GetHp() == 0)
+		if (player->GetHp() <= 0)
 			return false;
 		return true;
 	}
@@ -29,6 +29,8 @@ public:
 
 	void Drow();
 
+	void NextScene();
+
 private:
 	shared_ptr<Ironclad> _ironclad;
 	vector<shared_ptr<GremlinNob>> _monsters;
@@ -38,6 +40,8 @@ private:
 	vector<shared_ptr<Card>> _hand;
 	vector<shared_ptr<Card>> _discarded;
 	shared_ptr<Map1> _backgrund;
+
+	shared_ptr<Button> _NextTurn;
 
 	int a = 0;
 	int hand2;
