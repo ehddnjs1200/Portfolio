@@ -42,7 +42,7 @@ void Device::CreateDeviceAndSwapChain()
         nullptr,                    // 그래픽카드 어떤쓸지, nullptr을 쓰면 내가 사용중인 그래픽카드가 들어감
         D3D_DRIVER_TYPE_HARDWARE,   // 하드웨어 수준에 맞는 기술 적용
         0,                          // 어떤 추가적인 값은 줄건지
-        D3D11_CREATE_DEVICE_DEBUG,  // 디버그 정보 생성
+        D3D11_CREATE_DEVICE_DEBUG | D3D11_CREATE_DEVICE_BGRA_SUPPORT,  // 디버그 정보 생성
         featureLevels,              // 피쳐레벨 배열
         featureSize,                // 피쳐레벨 사이즈
         D3D11_SDK_VERSION,          // SDK 버전

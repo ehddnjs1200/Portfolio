@@ -15,5 +15,6 @@ void Character::GetDemage(int demage)
 
 void Character::Heling(int value)
 {
+	_hp += value;
 	_hpBar->IncreaseHp(value);
 }

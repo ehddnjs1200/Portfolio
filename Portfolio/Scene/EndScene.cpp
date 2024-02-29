@@ -35,6 +35,9 @@ void EndScene::init(int scene)
 		_End = make_shared<Button>(L"EndB.png");
 
 	if (scene == 2)
+		_End = make_shared<Button>(L"EndB.png");
+
+	if (scene == 3)
 		_End = make_shared<Button>(L"DieB.png");
 }
 
@@ -49,6 +52,6 @@ void EndScene::Setting()
 
 void EndScene::NextScene()
 {
-	int a = 5;
+	SceneManager::GetInstace()->NextBettle();
 	SceneManager::GetInstace()->SetScene("Start");
 }

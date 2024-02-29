@@ -93,6 +93,7 @@ void ICreate()
     KeyBoard::Create();
     Timer::Create();
     Camera::Create();
+    DXWrite::Create();
 
     StateManager::Create();
     TextureManager::Create();
@@ -106,6 +107,7 @@ void IDelete()
     KeyBoard::Delete();
     Timer::Delete();
     Camera::Delete();
+    DXWrite::Delete();
 
     StateManager::Delete();
     TextureManager::Delete();

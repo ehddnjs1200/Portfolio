@@ -43,6 +43,7 @@
 #include "../DirectXTex/DirectXTex.h"
 
 
+// DWrite용 라이브러리
 #include <d2d1_1.h>
 #include <dwrite.h>
 
@@ -137,6 +138,8 @@ using namespace Microsoft::WRL;
 
 #include "Framwork/UsingCard/UsingCard.h"
 #include "Framwork/Bettle/Bettle.h"
+
+#include "Obejct/Map/MapP.h"
 
 // Scene
 #include "Scene/Scene.h"

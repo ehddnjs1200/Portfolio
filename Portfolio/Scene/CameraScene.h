@@ -10,8 +10,10 @@ public:
 	virtual void Update() override;
 	virtual void Render() override;
 	virtual void PostRender() override;
+	virtual void SceneTest() override;
 
 	void Init();
+
 	void Setting();
 
 	void ShuffleDeck();
@@ -20,6 +22,17 @@ public:
 	{
 		if (player->GetHp() <= 0)
 			return false;
+
+		return true;
+	}
+
+	bool AllDead(vector<shared_ptr<GremlinNob>> player)
+	{
+		for (int i = 0; i < player.size(); i++)
+		{
+			if (player[i]->GetHp() <= 0)
+				return false;
+		}
 		return true;
 	}
 
@@ -30,6 +43,8 @@ public:
 	void Drow();
 
 	void NextScene();
+
+	void NextMonster();
 
 private:
 	shared_ptr<Ironclad> _ironclad;

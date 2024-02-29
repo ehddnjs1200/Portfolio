@@ -171,6 +171,12 @@
     <ClInclude Include="Framwork\Render\Shader\ShaderManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Framwork\Utillity\DXWrite.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Obejct\Map\MapP.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Portfolio.cpp">
@@ -312,6 +318,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Framwork\Render\Shader\ShaderManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framwork\Utillity\DXWrite.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Obejct\Map\MapP.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -721,6 +733,156 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="Resource\Ironclad\corpse.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\boss\automaton.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\boss\awakened.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\boss\collector.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\boss\champ.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\boss\donu.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\boss\guardian.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\boss\heart.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\boss\hexaghost.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\boss\slime.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\boss\timeeater.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\bossOutline\automaton.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\bossOutline\awakened.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\bossOutline\champ.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\bossOutline\collector.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\bossOutline\donu.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\bossOutline\guardian.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\bossOutline\heart.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\bossOutline\hexaghost.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\bossOutline\slime.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\bossOutline\timeeater.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\chest.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\chestOutline.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\circle1.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\circle2.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\circle3.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\circle4.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\circle5.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\dot1.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\elite.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\event.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\eliteOutline.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\eventOutline.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\legend2.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\mapBlend.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\mapBlend2.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\mapBot.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\mapCompleteIcon.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\mapMid.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\mapMid2.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\mapShrineIcon.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\mapTop.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\monster.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\monsterOutline.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\purgeWellIcon.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\rest.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\restOutline.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\selectBox.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\shop.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\shop_blood.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map\shopOutline.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

@@ -17,5 +17,6 @@ public:
 private:
 	shared_ptr<Quad> _background;
 	shared_ptr<Button> _start;
+	shared_ptr<Ironclad> _ironclad;
 };
 

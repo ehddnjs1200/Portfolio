@@ -161,6 +161,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Framwork\Utillity\DXWrite.h" />
+    <ClInclude Include="Obejct\Map\MapP.h" />
     <ClInclude Include="Obejct\UI\Button.h" />
     <ClInclude Include="Scene\EndScene.h" />
     <ClInclude Include="Framwork\Bettle\Bettle.h" />
@@ -220,6 +222,8 @@
     <ClInclude Include="Framwork\UsingCard\UsingCard.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Framwork\Utillity\DXWrite.cpp" />
+    <ClCompile Include="Obejct\Map\MapP.cpp" />
     <ClCompile Include="Obejct\UI\Button.cpp" />
     <ClCompile Include="Scene\EndScene.cpp" />
     <ClCompile Include="Framwork\Bettle\Bettle.cpp" />
@@ -413,6 +417,56 @@
     <Image Include="Resource\map1-1.jpg" />
     <Image Include="Resource\map1-2-2.png" />
     <Image Include="Resource\map1-2.png" />
+    <Image Include="Resource\map\bossOutline\automaton.png" />
+    <Image Include="Resource\map\bossOutline\awakened.png" />
+    <Image Include="Resource\map\bossOutline\champ.png" />
+    <Image Include="Resource\map\bossOutline\collector.png" />
+    <Image Include="Resource\map\bossOutline\donu.png" />
+    <Image Include="Resource\map\bossOutline\guardian.png" />
+    <Image Include="Resource\map\bossOutline\heart.png" />
+    <Image Include="Resource\map\bossOutline\hexaghost.png" />
+    <Image Include="Resource\map\bossOutline\slime.png" />
+    <Image Include="Resource\map\bossOutline\timeeater.png" />
+    <Image Include="Resource\map\boss\automaton.png" />
+    <Image Include="Resource\map\boss\awakened.png" />
+    <Image Include="Resource\map\boss\champ.png" />
+    <Image Include="Resource\map\boss\collector.png" />
+    <Image Include="Resource\map\boss\donu.png" />
+    <Image Include="Resource\map\boss\guardian.png" />
+    <Image Include="Resource\map\boss\heart.png" />
+    <Image Include="Resource\map\boss\hexaghost.png" />
+    <Image Include="Resource\map\boss\slime.png" />
+    <Image Include="Resource\map\boss\timeeater.png" />
+    <Image Include="Resource\map\chest.png" />
+    <Image Include="Resource\map\chestOutline.png" />
+    <Image Include="Resource\map\circle1.png" />
+    <Image Include="Resource\map\circle2.png" />
+    <Image Include="Resource\map\circle3.png" />
+    <Image Include="Resource\map\circle4.png" />
+    <Image Include="Resource\map\circle5.png" />
+    <Image Include="Resource\map\dot1.png" />
+    <Image Include="Resource\map\elite.png" />
+    <Image Include="Resource\map\eliteOutline.png" />
+    <Image Include="Resource\map\event.png" />
+    <Image Include="Resource\map\eventOutline.png" />
+    <Image Include="Resource\map\legend2.png" />
+    <Image Include="Resource\map\mapBlend.png" />
+    <Image Include="Resource\map\mapBlend2.png" />
+    <Image Include="Resource\map\mapBot.png" />
+    <Image Include="Resource\map\mapCompleteIcon.png" />
+    <Image Include="Resource\map\mapMid.png" />
+    <Image Include="Resource\map\mapMid2.png" />
+    <Image Include="Resource\map\mapShrineIcon.png" />
+    <Image Include="Resource\map\mapTop.png" />
+    <Image Include="Resource\map\monster.png" />
+    <Image Include="Resource\map\monsterOutline.png" />
+    <Image Include="Resource\map\purgeWellIcon.png" />
+    <Image Include="Resource\map\rest.png" />
+    <Image Include="Resource\map\restOutline.png" />
+    <Image Include="Resource\map\selectBox.png" />
+    <Image Include="Resource\map\shop.png" />
+    <Image Include="Resource\map\shopOutline.png" />
+    <Image Include="Resource\map\shop_blood.png" />
     <Image Include="Resource\Monster\Gremlin Nob.png" />
     <Image Include="Resource\StartB.png" />
     <Image Include="small.ico" />

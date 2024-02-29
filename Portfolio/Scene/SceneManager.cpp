@@ -1,17 +1,17 @@
 #include "framework.h"
 #include "SceneManager.h"
 
-#include "Scene/CameraScene.h"
 #include "Scene/StartScene.h"
 #include "Scene/EndScene.h"
+#include "Scene/CameraScene.h"
 
 SceneManager* SceneManager::_instance = nullptr;
 
 SceneManager::SceneManager()
 {
-	_sceneTable["Bettle"] = make_shared<CameraScene>();
 	_sceneTable["Start"] = make_shared<StartScene>();
 	_sceneTable["End"] = make_shared<EndScene>();
+	_sceneTable["Bettle"] = make_shared<CameraScene>();
 
 	_curScene = _sceneTable["Start"];
 }
@@ -54,5 +54,18 @@ void SceneManager::SetScene(string name)
 		return;
 
 	_curScene = _sceneTable[name];
-	_curScene.lock()->Init();
+	
+	if (name == "Bettle")
+	{
+		_curScene.lock()->SceneTest();
+	}
+
+	//_curScene.lock()->Init();
+	//_curScene.lock()->Setting();
+}
+
+void SceneManager::NextBettle()
+{
+	_sceneTable.erase("Bettle");
+	_sceneTable["Bettle"] = make_shared<CameraScene>();
 }

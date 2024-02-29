@@ -28,6 +28,9 @@ public:
 
 	void SetScene(string name);
 
+	void NextBettle();
+
+
 private:
 	static SceneManager* _instance;
 	unordered_map<string, shared_ptr<Scene>> _sceneTable;

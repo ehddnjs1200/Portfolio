@@ -24,7 +24,10 @@ void CameraScene::Update()
 	_NextTurn->Update();
 
 	for (int i = 0; i < _monsters.size(); i++)
-		_monsters[i]->Update();
+	{
+		if (_monsters[i]->GetHp() > 0)
+			_monsters[i]->Update();
+	}
 
 	if (!_hand.empty())
 	{
@@ -38,27 +41,42 @@ void CameraScene::Update()
 			}
 			if (KeyUp(VK_LBUTTON))
 			{
-				if (_monsters[0]->GetCollider()->IsCollision(mousepos))
+				for (int i = 0; i < _monsters.size(); i++)
 				{
-					PlayerAttack(_hand[hand2], _ironclad, _monsters[0]);
-					if (_hand[hand2]->GetChoice())
+					if (_monsters[i]->GetHp() > 0)
 					{
-						_discarded.emplace_back(make_shared<Card>(*_hand[hand2]));
-						_hand.erase(_hand.begin() + hand2);
+
+						if (_monsters[i]->GetCollider()->IsCollision(mousepos))
+						{
+							PlayerAttack(_hand[hand2], _ironclad, _monsters[i]);
+							if (_hand[hand2]->GetChoice())
+							{
+								_discarded.emplace_back(make_shared<Card>(*_hand[hand2]));
+								_hand.erase(_hand.begin() + hand2);
+							}
+						}
+						else
+							_hand[hand2]->UnCelled();
+
+						hand2 = _hand.size();
 					}
 				}
-				else
-					_hand[hand2]->UnCelled();
-
-				hand2 = _hand.size();
 			}
 		}
 	}
 
-	if (!AllDead(_monsters[0]))
+
+
+	if (!AllDead(_monsters))
 	{
-		scene = 1;
+		scene = 2;
+
+		TurnEnd();
+
+		//NextMonster();
+
 		NextScene();
+
 	}
 	
 
@@ -79,8 +97,12 @@ void CameraScene::Render()
 {
 	_backgrund->Render();
 	_ironclad->Render();
+
 	for (int i = 0; i < _monsters.size(); i++)
-		_monsters[i]->Render();
+	{
+		if (_monsters[i]->GetHp() > 0)
+			_monsters[i]->Render();
+	}
 
 
 	for (int i = 0; i < _hand.size(); i++)
@@ -94,13 +116,28 @@ void CameraScene::PostRender()
 	_NextTurn->PostRender();
 }
 
+void CameraScene::SceneTest()
+{
+	if (scene == 2)
+	{
+		_monsters[0]->Heling(30);
+	}
+
+	if (scene == 3)
+	{
+		_ironclad->Heling(180);
+	}
+
+}
+
 void CameraScene::Init()
 {
-	_ironclad = make_shared<Ironclad>(3,180,5);
-	_monsters.emplace_back(make_shared<GremlinNob>(86));
+	_ironclad = make_shared<Ironclad>(3, 180, 5);
+	_monsters.emplace_back(make_shared<GremlinNob>(30));
 	_backgrund = make_shared<Map1>();
 
 	_NextTurn = make_shared<Button>(L"buttonL.png");
+
 }
 
 
@@ -166,9 +203,10 @@ void CameraScene::TurnEnd()
 
 	if (!AllDead(_ironclad))
 	{
-		scene = 2;
+		scene = 3;
 		NextScene();
 	}
+
 	TurnStrat();
 }
 
@@ -239,6 +277,11 @@ void CameraScene::Drow()
 
 void CameraScene::NextScene()
 {
-	int a = 5;
 	SceneManager::GetInstace()->SetScene("End");
+
+}
+
+void CameraScene::NextMonster()
+{
+	_monsters.emplace_back(make_shared<GremlinNob>(30));
 }
